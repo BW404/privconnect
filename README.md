@@ -1,0 +1,1 @@
+# PrivConnect is a mini social meda app. Which is created using HTML, CSS, JavaScript, PHP and MySQL.
