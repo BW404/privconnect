@@ -266,6 +266,26 @@ nav{
     padding: 20px;
     color: #ffff;
 }
+.post-btn{
+    background: #dc143c;
+    color: #ffff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 10px;
+    transition: all 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+
+}
 
 .user-profile{
     display: flex;
@@ -482,7 +502,7 @@ nav{
 
 /* ///......activity section....../// */
 
-
+/* 
 
 
 
@@ -572,6 +592,7 @@ button {
 		background: #e6e1d6;
 		color: #362f21;
 	} */
+/*      
 	.active & {
 		min-width: 36rem;
 		min-height: 36rem;
@@ -606,7 +627,7 @@ button {
 	to {
 		transform: scale(0);
 	}
-}
+} */ 
 
 
 /* Activity section end */
@@ -657,6 +678,31 @@ button {
     
     .main-content{
         flex-basis: 100%;
+    }
+
+    .container{
+        flex-direction: column;
+        padding: 0 5%;
+    }
+
+    .write-post-container{
+        padding: 10px 5%;
+    }
+    .write-post-container .user-profile{
+        padding-left: 0;
+    }
+    .write-post-container .user-profile img{
+        width: 35px;
+    }
+    .write-post-container .user-profile p{
+        font-size: 14px;
+    }
+    .write-post-container .user-profile small{
+        font-size: 10px;
+    }
+    .write-post-container .post-input-conatiner{
+        padding-left: 0;
+        padding-top: 10px;
     }
 
     nav{
