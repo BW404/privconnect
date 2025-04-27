@@ -300,6 +300,7 @@ nav{
     border-bottom: 1px solid #ccc;
     background: transparent;
     resize: none;
+    color:white;
 }
 
 .add-post-links{
@@ -472,11 +473,25 @@ nav{
 
 
 
+
+
+
+
+
+
+
+/* ///......activity section....../// */
+
+
+
+
+
 #container {
 	position: absolute;
 	bottom: 50%;
 	left: 50%;
 	transform: translate(-50%, 50%);
+    
 }
 
 .activity {
@@ -485,18 +500,17 @@ nav{
 	transition: 300ms all ease;
 	position: absolute;
 	pointer-events: none;
-	left: 50%;
-	top: 4.8rem;
+	left: 50%;;
 	transform: translatex(-50%);
 	.item {
 		max-height: 0;
 		opacity: 0;
 		margin: 1rem;
-		padding: 2rem;
+		padding: 1rem;
 		font-weight: 500;
 		text-transform: none;
 		letter-spacing: 0;
-		font-size: 1.8rem;
+		font-size: 1rem;
 		text-align: left;
 		background: fade(#362f21, 10%);
 		outline: 2px solid orangered;
@@ -522,29 +536,19 @@ nav{
 }
 
 button {
-	font-size: 1.8rem;
-	text-transform: uppercase;
-	font-family: inherit;
-	font-weight: 700;
-	letter-spacing: 0.1rem;
-	padding: 1.2rem 2.4rem;
-	border: none;
-	border-radius: 0.8rem;
-	color: #362f21;
-	border: 0.2rem solid #362f21;
-	background: none;
-	position: relative;
-	cursor: pointer;
-	min-width: 0;
-	min-height: 0;
-	transition: 300ms color ease-in-out, 300ms background ease-in-out,
+    display: hidden;
+    width: 0px;
+    height: 0px;
+    
+
+	/* transition: 300ms color ease-in-out, 300ms background ease-in-out,
 		300ms min-width 0ms ease-in-out, 300ms min-height 300ms ease-in-out;
 	.buttonText {
 		position: relative;
 		top: 0;
 		transition: 300ms top 280ms ease-in-out;
-	}
-	&::before {
+	} */
+	/* &::before {
 		content: "3";
 		letter-spacing: 0;
 		color: #e6e1d6;
@@ -562,15 +566,16 @@ button {
 	&:hover {
 		background: #362f21;
 		color: #e6e1d6;
-	}
-	&:focus,
+	} */
+	/* &:focus,
 	&:active {
 		background: #e6e1d6;
 		color: #362f21;
-	}
+	} */
 	.active & {
 		min-width: 36rem;
 		min-height: 36rem;
+        font: .5em sans-serif;
 		&:hover {
 			background: #e6e1d6;
 			color: #362f21;
@@ -580,8 +585,9 @@ button {
 		}
 	}
 	.active & .buttonText {
-		top: -15rem;
+		top: 15rem;
 	}
+    
 }
 
 .clicked:not(.active) button::before {
@@ -603,7 +609,7 @@ button {
 }
 
 
-
+/* Activity section end */
 
 
 
@@ -629,20 +635,20 @@ button {
 
 
 @media(min-width: 280px) and (max-width: 868px){
-   /* .nav-right .search-box{
-       display: none;
-   } */
-
-   .nav-left .icons-nav{
+   .nav-right .search-box{
        display: none;
    }
+
+   /* .nav-left .icons-nav{
+       display: none;
+   } */
 
     .left-sidebar, .right-sidebar{
         display: none;
     }
 
     .search-box{
-        width: 250px;
+        width: 25px;
     }
 
     /* .nav-user-icon{
@@ -653,6 +659,9 @@ button {
         flex-basis: 100%;
     }
 
+    nav{
+        width: 100vw;
+    }
 }
 
 @media(min-width: 869px) and (max-width: 1200px){
