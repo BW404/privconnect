@@ -38,7 +38,7 @@ a {
   align-items: center;
 }
 .full-screen {
-  min-height: 100vh;
+  min-height: 90vh;
 }
 .text-center {
   text-align: center;
@@ -55,6 +55,7 @@ a {
   height: 2px;
   background-color: #dc143c;
   display: inline-block;
+
 }
 .left h2 {
   margin-top: 25px;
@@ -354,6 +355,9 @@ input[type="checkbox"] {
   .left h2 {
     text-align: center;
   }
+  .left .line {
+    display: none;
+  }
 }
 
 @media (max-width: 400px) {
@@ -365,5 +369,8 @@ input[type="checkbox"] {
   }
   .card-3d-wrap {
     width: 300px;
+  }
+  .left .line {
+    display: none;
   }
 }
