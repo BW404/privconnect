@@ -1,4 +1,80 @@
-impo
+<?php
+// Include database configuration
+include('config.php');
+
+// Start session
+session_start();
+
+// Check if the user is already logged in
+if (isset($_SESSION['user_id'])) {
+    header('Location: dashboard.php'); // Redirect to dashboard if logged in
+    exit;
+}
+
+// Handle login form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
+
+    // Validate input
+    if (empty($username) || empty($password)) {
+        $error = "Please fill in all fields.";
+    } else {
+        // Prepare and execute SQL statement to check credentials
+        $stmt = $conn->prepare("SELECT user_id, password FROM user WHERE username = ?");
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            $user = $result->fetch_assoc();
+            // Verify the hashed password
+            if (password_verify($password, $user['password'])) {
+                // User found, set session variables
+                $_SESSION['user_id'] = $user['id'];
+                header('Location: dashboard.php'); // Redirect to dashboard
+                exit;
+            } else {
+                $error = "Invalid username or password.";
+            }
+        } else {
+            $error = "Invalid username or password.";
+        }
+    }
+}
+
+// Handle signup form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signup'])) {
+    $full_name = $_POST['full_name'] ?? '';
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
+
+    // Validate input
+    if (empty($full_name) || empty($username) || empty($password)) {
+        $error = "Please fill in all fields.";
+    } else {
+        // Hash the password before storing it
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+        // Prepare and execute SQL statement to insert new user
+        $stmt = $conn->prepare("INSERT INTO user (full_name, username, password) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $full_name, $username, $hashed_password);
+        if ($stmt->execute()) {
+            header('Location: login.php'); // Redirect to login page after successful signup
+            exit;
+        } else {
+            $error = "Error creating account. Please try again.";
+        }
+    }
+}
+
+// Close database connection
+if (isset($conn)) {
+    $conn->close();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +85,6 @@ impo
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/material-icons@1.13.12/iconfont/material-icons.min.css">
 </head>
-
-
 <body>
     <section>
         <div class="container">
@@ -28,43 +102,42 @@ impo
                             <label for="reg-log"></label>
                             <div class="card-3d-wrap">
                                 <div class="card-3d-wrapper">
+                                    <!-- Login Form -->
                                     <div class="card-front">
                                         <div class="center-wrap">
                                             <h4 class="heading">Log In</h4>
-                                            <div class="form-group">
-                                                <input type="email" class="form-style" placeholder="Username" autocomplete="off">
-                                                <i class="input-icon material-icons">alternate_email</i>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input type="password" class="form-style" placeholder="Password" autocomplete="off">
-                                                <i class="input-icon material-icons">lock</i>
-                                            </div>
-
-                                            <a href="#" class="btn">Submit</a>
-                                            <!-- <p class="text-center"><a href="#" class="link">Forgot your password?</a></p> -->
+                                            <form method="POST" action="login.php">
+                                                <div class="form-group">
+                                                    <input type="text" name="username" class="form-style" placeholder="Username" autocomplete="off">
+                                                    <i class="input-icon material-icons">alternate_email</i>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" name="password" class="form-style" placeholder="Password" autocomplete="off">
+                                                    <i class="input-icon material-icons">lock</i>
+                                                </div>
+                                                <button type="submit" name="login" class="btn">Submit</button>
+                                            </form>
                                         </div>
                                     </div>
-
+                                    <!-- Signup Form -->
                                     <div class="card-back">
                                         <div class="center-wrap">
                                             <h4 class="heading">Sign Up</h4>
-                                            <div class="form-group">
-                                                <input type="text" class="form-style" placeholder="Full Name" autocomplete="off">
-                                                <i class="input-icon material-icons">perm_identity</i>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input type="email" class="form-style" placeholder="Username" autocomplete="off">
-                                                <i class="input-icon material-icons">alternate_email</i>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <input type="password" class="form-style" placeholder="Create Password" autocomplete="off">
-                                                <i class="input-icon material-icons">lock</i>
-                                            </div>
-
-                                            <a href="#" class="btn">Submit</a>
+                                            <form method="POST" action="login.php">
+                                                <div class="form-group">
+                                                    <input type="text" name="full_name" class="form-style" placeholder="Full Name" autocomplete="off">
+                                                    <i class="input-icon material-icons">perm_identity</i>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" name="username" class="form-style" placeholder="Username" autocomplete="off">
+                                                    <i class="input-icon material-icons">alternate_email</i>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="password" name="password" class="form-style" placeholder="Create Password" autocomplete="off">
+                                                    <i class="input-icon material-icons">lock</i>
+                                                </div>
+                                                <button type="submit" name="signup" class="btn">Submit</button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
