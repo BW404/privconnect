@@ -5,9 +5,12 @@ include('config.php');
 // Start session
 session_start();
 
+// Initialize error variable
+$error = "";
+
 // Check if the user is already logged in
 if (isset($_SESSION['user_id'])) {
-    header('Location: dashboard.php'); // Redirect to dashboard if logged in
+    header('Location: dashboard.html'); // Redirect to dashboard if logged in
     exit;
 }
 
@@ -31,8 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['login'])) {
             // Verify the hashed password
             if (password_verify($password, $user['password'])) {
                 // User found, set session variables
-                $_SESSION['user_id'] = $user['id'];
-                header('Location: dashboard.php'); // Redirect to dashboard
+                $_SESSION['user_id'] = $user['user_id'];
+                header('Location: dashboard.html'); // Redirect to dashboard
                 exit;
             } else {
                 $error = "Invalid username or password.";
@@ -73,8 +76,6 @@ if (isset($conn)) {
     $conn->close();
 }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -107,6 +108,9 @@ if (isset($conn)) {
                                         <div class="center-wrap">
                                             <h4 class="heading">Log In</h4>
                                             <form method="POST" action="login.php">
+                                                <?php if (!empty($error)): ?>
+                                                    <p class="error-message"><?php echo htmlspecialchars($error); ?></p>
+                                                <?php endif; ?>
                                                 <div class="form-group">
                                                     <input type="text" name="username" class="form-style" placeholder="Username" autocomplete="off">
                                                     <i class="input-icon material-icons">alternate_email</i>

@@ -286,6 +286,13 @@ input[type="checkbox"] {
   transform: translate(-50%, -50%);
 }
 
+.error-message {
+  color: #dc3545; /* Red color for error */
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
 @media (max-width: 992px) {
   nav .menu-btn i {
     display: block;
