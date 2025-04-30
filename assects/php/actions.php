@@ -1,2 +1,3 @@
 <?php
-is(isset)
+is(isset($_GET['signup'])) {
+}
