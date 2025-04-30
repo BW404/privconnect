@@ -66,5 +66,15 @@ function validateSignupForm($form_data) {
 
 }
 
+function showError($field){
+    if(isset($_SESSION['error'])){
+        $error = $_SESSION['error'];
+        if($error['field'] == $field){
+            echo '<div class="alert alert-danger">'.$error['msg'].'</div>';
+            unset($_SESSION['error']);
+        }
+    }
+}
+
 
 
