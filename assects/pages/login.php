@@ -149,7 +149,7 @@ if (isset($conn)) {
 
                                                 <div class="form-group">
                                                     <input type="text" name="username" class="form-style" placeholder="Username" autocomplete="off">
-                                                    <i class="input-icon material-icons">alternate_email</i>
+                                                    <i class="input-icon material-icons">email</i>
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="password" name="password" class="form-style" placeholder="Create Password" autocomplete="off">
