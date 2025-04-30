@@ -63,10 +63,12 @@ print_r($_SESSION['error']);
                                                 <div class="form-group">
                                                     <input type="text" name="first_name" class="form-style" placeholder="First Name" autocomplete="off">
                                                     <i class="input-icon material-icons">perm_identity</i>
+                                                    <?php showError('first_name'); ?>
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="text" name="last_name" class="form-style" placeholder="Last Name" autocomplete="off">
                                                     <i class="input-icon material-icons">perm_identity</i>
+                                                    <?php showError('last_name'); ?>
                                                 </div>
                                                 
                                                 <div class="form-group">
@@ -81,15 +83,18 @@ print_r($_SESSION['error']);
                                                 <div class="form-group">
                                                     <input type="text" name="email" class="form-style" placeholder="Email" autocomplete="off">
                                                     <i class="input-icon material-icons">email</i>
+                                                    <?php showError('email'); ?>
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="text" name="username" class="form-style" placeholder="Username" autocomplete="off">
                                                     <i class="input-icon material-icons">alternate_email</i>
+                                                    <?php showError('username'); ?>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <input type="password" name="password" class="form-style" placeholder="Create Password" autocomplete="off">
                                                     <i class="input-icon material-icons">lock</i>
+                                                    <?php showError('password'); ?>
                                                 </div>
                                                 <button type="submit" name="signup" class="btn">Submit</button>
                                             </form>
