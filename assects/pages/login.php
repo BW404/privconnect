@@ -137,6 +137,14 @@ if (isset($conn)) {
                                                     <i class="input-icon material-icons">perm_identity</i>
                                                 </div>
                                                 
+                                                <div class="form-group">
+                                                    <select name="gender" class="form-style">
+                                                        <option value="" disabled selected>Select Gender</option>
+                                                        <option value="1">Male</option>
+                                                        <option value="2">Female</option>
+                                                    </select>
+                                                    <i class="input-icon material-icons">wc</i>
+                                                </div>
                                                 
 
                                                 <div class="form-group">
