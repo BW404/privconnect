@@ -64,6 +64,13 @@ print_r($_SESSION['error']);
                                                 <div class="form-group">
                                                     <input type="text" name="first_name" class="form-style" placeholder="First Name" autocomplete="off">
                                                     <i class="input-icon material-icons">perm_identity</i>
+                                                    <!-- show error -->
+                                                     <?php
+                                                     if(isset($_SESSION['error'])){
+                                                        $error = $_SESSION['error'];
+                                                        if($error['field'] == "first_name"){
+                                                            echo '<p class="error-message">'.$error['msg'].'</p>';
+                                                        }?>
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="text" name="last_name" class="form-style" placeholder="Last Name" autocomplete="off">
