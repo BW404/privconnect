@@ -4,7 +4,7 @@ require_once 'functions.php';
 require_once 'actions.php';
 
 function validateSignupForm($form_data) {
-    $response = array();
+    $response = array('status'=> true);
     
     // Validate password
 
