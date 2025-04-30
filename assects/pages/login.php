@@ -129,6 +129,10 @@ if (isset($conn)) {
                                             <h4 class="heading">Sign Up</h4>
                                             <form method="POST" action="login.php">
                                                 <div class="form-group">
+                                                    <input type="text" name="f_name" class="form-style" placeholder="Full Name" autocomplete="off">
+                                                    <i class="input-icon material-icons">perm_identity</i>
+                                                </div>
+                                                <div class="form-group">
                                                     <input type="text" name="full_name" class="form-style" placeholder="Full Name" autocomplete="off">
                                                     <i class="input-icon material-icons">perm_identity</i>
                                                 </div>
