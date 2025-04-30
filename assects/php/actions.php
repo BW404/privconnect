@@ -8,5 +8,6 @@ if($response['status']){
 else{
     $_SESSION['error']=$response;
     header("Location: ../pages/login.php?signup");
+    exit();
 }
 }
