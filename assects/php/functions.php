@@ -37,3 +37,24 @@ function validateSignupForm($form_data) {
         $response['status'] = "flase";
         $response['field'] = "email";
     }
+    // Validate username
+    if (empty($form_data['username'])) {
+        $response['msg'] = "Username is required.";
+        $response['status'] = "flase";
+        $response['field'] = "username";
+    } elseif (!preg_match("/^[a-zA-Z0-9]*$/", $form_data['username'])) {
+        $response['msg'] = "Only letters and numbers allowed in username.";
+        $response['status'] = "flase";
+        $response['field'] = "username";
+    }
+    // Validate password
+
+    if (empty($form_data['password'])) {
+        $response['msg'] = "Password is required.";
+        $response['status'] = "flase";
+        $response['field'] = "password";
+    } elseif (strlen($form_data['password']) < 8) {
+        $response['msg'] = "Password must be at least 8 characters long.";
+        $response['status'] = "flase";
+        $response['field'] = "password";
+    }
