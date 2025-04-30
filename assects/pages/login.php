@@ -2,14 +2,15 @@
 // Include database configuration
 include('../php/config.php');
 require_once '../php/functions.php';
-// // Start session
-// session_start();
 
-// Close database connection
-if (isset($conn)) {
-    $conn->close();
+// Start session
+session_start(); // Ensure session is started
+
+// Check for errors in the session
+if (isset($_SESSION['error'])) {
+    $error = $_SESSION['error'];
+    unset($_SESSION['error']); // Clear the error after displaying it
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,11 +46,9 @@ if (isset($conn)) {
                                             <form method="POST" action="../php/actions.php?login">
                                                 <div class="form-group">
                                                     <input type="text" name="username" class="form-style" placeholder="Username" autocomplete="off">
-                                                    <i class="input-icon material-icons">alternate_email</i>
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="password" name="password" class="form-style" placeholder="Password" autocomplete="off">
-                                                    <i class="input-icon material-icons">lock</i>
                                                 </div>
                                                 <button type="submit" name="login" class="btn">Submit</button>
                                             </form>
@@ -62,39 +61,23 @@ if (isset($conn)) {
                                             <form method="POST" action="../php/actions.php?signup">
                                                 <div class="form-group">
                                                     <input type="text" name="first_name" class="form-style" placeholder="First Name" autocomplete="off">
-                                                    <i class="input-icon material-icons">perm_identity</i>
-                                                    <?php=showError('first_name'); ?>
+                                                    <?php if (isset($error) && $error['field'] === 'first_name') echo '<p class="error-message">' . $error['msg'] . '</p>'; ?>
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="text" name="last_name" class="form-style" placeholder="Last Name" autocomplete="off">
-                                                    <i class="input-icon material-icons">perm_identity</i>
-                                                    <?php=showError('last_name'); ?>
+                                                    <?php if (isset($error) && $error['field'] === 'last_name') echo '<p class="error-message">' . $error['msg'] . '</p>'; ?>
                                                 </div>
-                                                
-                                                <div class="form-group">
-                                                    <select name="gender" class="form-style">
-                                                        <option value="" disabled selected>Select Gender</option>
-                                                        <option value="1">Male</option>
-                                                        <option value="2">Female</option>
-                                                    </select>
-                                                    <i class="input-icon material-icons">wc</i>
-                                                </div>
-                                                
                                                 <div class="form-group">
                                                     <input type="text" name="email" class="form-style" placeholder="Email" autocomplete="off">
-                                                    <i class="input-icon material-icons">email</i>
-                                                    <?php=showError('email'); ?>
+                                                    <?php if (isset($error) && $error['field'] === 'email') echo '<p class="error-message">' . $error['msg'] . '</p>'; ?>
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="text" name="username" class="form-style" placeholder="Username" autocomplete="off">
-                                                    <i class="input-icon material-icons">alternate_email</i>
-                                                    <?php=showError('username'); ?>
+                                                    <?php if (isset($error) && $error['field'] === 'username') echo '<p class="error-message">' . $error['msg'] . '</p>'; ?>
                                                 </div>
-
                                                 <div class="form-group">
-                                                    <input type="password" name="password" class="form-style" placeholder="Create Password" autocomplete="off">
-                                                    <i class="input-icon material-icons">lock</i>
-                                                    <?php=showError('password'); ?>
+                                                    <input type="password" name="password" class="form-style" placeholder="Password" autocomplete="off">
+                                                    <?php if (isset($error) && $error['field'] === 'password') echo '<p class="error-message">' . $error['msg'] . '</p>'; ?>
                                                 </div>
                                                 <button type="submit" name="signup" class="btn">Submit</button>
                                             </form>
