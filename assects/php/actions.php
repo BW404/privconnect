@@ -4,4 +4,8 @@ if(isset($_GET['signup'])) {
     $response=validateSignupForm($_POST);
 if($response['status']{
 }
-else
+else{
+    $_SESSION['error']=$response;
+    header("Location: ../pages/login.php");
+}
+}
