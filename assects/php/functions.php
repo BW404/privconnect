@@ -19,9 +19,21 @@ function validateSignupForm($form_data) {
 
     // Validate last name
     if (empty($form_data['last_name'])) {
-        $errors[] = "Last name is required.";
+        $response['msg'] = "Last name is required.";
+        $response['status'] = "flase";
+        $response['field'] = "last_name";
     } elseif (!preg_match("/^[a-zA-Z ]*$/", $form_data['last_name'])) {
-        $errors[] = "Only letters and white space allowed in last name.";
-    }
+        $response['msg'] = "Only letters and white space allowed in last name.";
+        $response['status'] = "flase";
+        $response['field'] = "last_name";
 
-    // Validate
+    // Validate email
+    if (empty($form_data['email'])) {
+        $response['msg'] = "Email is required.";
+        $response['status'] = "flase";
+        $response['field'] = "email";
+    } elseif (!filter_var($form_data['email'], FILTER_VALIDATE_EMAIL)) {
+        $response['msg'] = "Invalid email format.";
+        $response['status'] = "flase";
+        $response['field'] = "email";
+    }
