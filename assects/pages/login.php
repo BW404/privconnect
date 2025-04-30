@@ -1,7 +1,7 @@
 <?php
 // Include database configuration
 include('../php/config.php');
-
+require_once '../php/functions.php';
 // // Start session
 // session_start();
 
