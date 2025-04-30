@@ -2,18 +2,11 @@
 // Include database configuration
 include('../php/config.php');
 require_once '../php/functions.php';
-
-// Start session
-// session_start(); // Ensure session is started
-
-// Check for errors in the session
-
-// Check for errors in the session
-$error = null; // Default to no error
-if (isset($_SESSION['error'])) {
-    $error = $_SESSION['error'];
-    unset($_SESSION['error']); // Clear the error after displaying it
-}
+// $error = null; // Default to no error
+// if (isset($_SESSION['error'])) {
+//     $error = $_SESSION['error'];
+//     unset($_SESSION['error']); // Clear the error after displaying it
+// }
 
 ?>
 <!DOCTYPE html>
@@ -65,23 +58,23 @@ if (isset($_SESSION['error'])) {
                                             <form method="POST" action="../php/actions.php?signup">
                                                 <div class="form-group">
                                                     <input type="text" name="first_name" class="form-style" placeholder="First Name" autocomplete="off">
-                                                    <?php if (isset($error) && $error['field'] === 'first_name') echo '<p class="error-message">' . $error['msg'] . '</p>'; ?>
+
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="text" name="last_name" class="form-style" placeholder="Last Name" autocomplete="off">
-                                                    <?php if (isset($error) && $error['field'] === 'last_name') echo '<p class="error-message">' . $error['msg'] . '</p>'; ?>
+
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="text" name="email" class="form-style" placeholder="Email" autocomplete="off">
-                                                    <?php if (isset($error) && $error['field'] === 'email') echo '<p class="error-message">' . $error['msg'] . '</p>'; ?>
+  
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="text" name="username" class="form-style" placeholder="Username" autocomplete="off">
-                                                    <?php if (isset($error) && $error['field'] === 'username') echo '<p class="error-message">' . $error['msg'] . '</p>'; ?>
+
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="password" name="password" class="form-style" placeholder="Password" autocomplete="off">
-                                                    <?php if (isset($error) && $error['field'] === 'password') echo '<p class="error-message">' . $error['msg'] . '</p>'; ?>
+
                                                 </div>
                                                 <button type="submit" name="signup" class="btn">Submit</button>
                                             </form>
