@@ -58,7 +58,7 @@ function validateSignupForm($form_data) {
         $response['status'] = "flase";
         $response['field'] = "first_name";
     } elseif (!preg_match("/^[a-zA-Z ]*$/", $form_data['first_name'])) {
-        $response['msg'] =  = "Only letters and white space allowed in first name.";
+        $response['msg'] = "Only letters and white space allowed in first name.";
         $response['status'] = "flase";
         $response['field'] = "first_name";
     }
