@@ -71,6 +71,7 @@ print_r($_SESSION['error']);
                                                         if($error['field'] == "first_name"){
                                                             echo '<p class="error-message">'.$error['msg'].'</p>';
                                                         }
+                                                    }
                                                         ?>
 
                                                 </div>
