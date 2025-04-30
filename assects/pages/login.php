@@ -136,6 +136,10 @@ if (isset($conn)) {
                                                     <input type="text" name="last_name" class="form-style" placeholder="Last Name" autocomplete="off">
                                                     <i class="input-icon material-icons">perm_identity</i>
                                                 </div>
+                                                <div class="form-group">
+                                                    <input type="text" name="full_name" class="form-style" placeholder="Full Name" autocomplete="off">
+                                                    <i class="input-icon material-icons">perm_identity</i>
+                                                </div>
                                                 
 
                                                 <div class="form-group">
