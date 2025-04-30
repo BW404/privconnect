@@ -79,7 +79,17 @@ if (isset($conn)) {
                                                     <input type="text" name="last_name" class="form-style" placeholder="Last Name" autocomplete="off">
                                                     <i class="input-icon material-icons">perm_identity</i>
                                                 </div>
+                                                <!-- show error -->
+                                                <?php
+                                                    if(isset($_SESSION['error'])){
+                                                    $error = $_SESSION['error'];
+                                                    if($error['field'] == "last_name"){
+                                                        echo '<p class="error-message">'.$error['msg'].'</p>';
+                                                    }
+                                                }
+                                                    ?>
                                                 
+
                                                 <div class="form-group">
                                                     <select name="gender" class="form-style">
                                                         <option value="" disabled selected>Select Gender</option>
@@ -92,15 +102,44 @@ if (isset($conn)) {
                                                 <div class="form-group">
                                                     <input type="text" name="email" class="form-style" placeholder="email" autocomplete="off">
                                                     <i class="input-icon material-icons">email</i>
+
+                                                    <!-- show error -->
+                                                    <?php
+                                                        if(isset($_SESSION['error'])){
+                                                        $error = $_SESSION['error'];
+                                                        if($error['field'] == "email"){
+                                                            echo '<p class="error-message">'.$error['msg'].'</p>';
+                                                        }
+                                                    }
+                                                        ?>
                                                 </div>
                                                 <div class="form-group">
                                                     <input type="text" name="username" class="form-style" placeholder="Username" autocomplete="off">
                                                     <i class="input-icon material-icons">alternate_email</i>
+
+                                                    <!-- show error -->
+                                                    <?php
+                                                        if(isset($_SESSION['error'])){
+                                                        $error = $_SESSION['error'];
+                                                        if($error['field'] == "username"){
+                                                            echo '<p class="error-message">'.$error['msg'].'</p>';
+                                                        }
+                                                    }
+                                                        ?>
                                                 </div>
 
                                                 <div class="form-group">
                                                     <input type="password" name="password" class="form-style" placeholder="Create Password" autocomplete="off">
                                                     <i class="input-icon material-icons">lock</i>
+                                                    <!-- show error -->
+                                                    <?php
+                                                        if(isset($_SESSION['error'])){
+                                                        $error = $_SESSION['error'];
+                                                        if($error['field'] == "password"){
+                                                            echo '<p class="error-message">'.$error['msg'].'</p>';
+                                                        }
+                                                    }
+                                                        ?>
                                                 </div>
                                                 <button type="submit" name="signup" class="btn">Submit</button>
                                             </form>
