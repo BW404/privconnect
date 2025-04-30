@@ -4,7 +4,7 @@ include('../php/config.php');
 require_once '../php/functions.php';
 
 // Start session
-session_start(); // Ensure session is started
+// session_start(); // Ensure session is started
 
 // Check for errors in the session
 if (isset($_SESSION['error'])) {
