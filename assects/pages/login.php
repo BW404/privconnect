@@ -7,10 +7,14 @@ require_once '../php/functions.php';
 // session_start(); // Ensure session is started
 
 // Check for errors in the session
+
+// Check for errors in the session
+$error = null; // Default to no error
 if (isset($_SESSION['error'])) {
     $error = $_SESSION['error'];
     unset($_SESSION['error']); // Clear the error after displaying it
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
