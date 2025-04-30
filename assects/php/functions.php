@@ -70,7 +70,7 @@ function showError($field){
     if(isset($_SESSION['error'])){
         $error = $_SESSION['error'];
         if($error['field'] == $field){
-            echo '<div class="alert alert-danger">'.$error['msg'].'</div>';
+            echo '<p class="error-message">'.$error['msg'].'</p>';
             unset($_SESSION['error']);
         }
     }
