@@ -287,10 +287,11 @@ input[type="checkbox"] {
 }
 
 .error-message {
-  color: #ff3a4e; /* Red color for error */
+  color: #ff5a6a; /* Red color for error */
   font-size: 14px;
   margin-bottom: 10px;
   text-align: center;
+  font-weight: bold;
 }
 
 @media (max-width: 992px) {
