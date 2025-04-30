@@ -67,7 +67,9 @@ function validateSignupForm($form_data) {
         $response['status'] = "flase";
         $response['field'] = "first_name";
     }
+    return $response;
 
+}
 
 
 
