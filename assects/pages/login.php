@@ -107,7 +107,7 @@ if (isset($conn)) {
                                     <div class="card-front">
                                         <div class="center-wrap">
                                             <h4 class="heading">Log In</h4>
-                                            <form method="POST" action="login.php">
+                                            <form method="POST" action="../php/actions.php">
                                                 <?php if (!empty($error)): ?>
                                                     <p class="error-message"><?php echo htmlspecialchars($error); ?></p>
                                                 <?php endif; ?>
@@ -127,7 +127,7 @@ if (isset($conn)) {
                                     <div class="card-back">
                                         <div class="center-wrap">
                                             <h4 class="heading">Sign Up</h4>
-                                            <form method="POST" action="login.php">
+                                            <form method="POST" action="../php/actions.php">
                                                 <div class="form-group">
                                                     <input type="text" name="first_name" class="form-style" placeholder="First Name" autocomplete="off">
                                                     <i class="input-icon material-icons">perm_identity</i>
