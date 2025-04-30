@@ -5,12 +5,7 @@ require_once 'actions.php';
 
 function validateSignupForm($form_data) {
     $response = array();
-
-
-
-
-
-    }
+    
     // Validate password
 
     if (empty($form_data['password'])) {
