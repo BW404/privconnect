@@ -23,39 +23,16 @@ function validateSignupForm($form_data) {
         $response['field'] = "password";
     }
 
-        // Validate username
-        if (empty($form_data['username'])) {
-            $response['msg'] = "Username is required.";
-            $response['status'] = "flase";
-            $response['field'] = "username";
-        } elseif (!preg_match("/^[a-zA-Z0-9]*$/", $form_data['username'])) {
-            $response['msg'] = "Only letters and numbers allowed in username.";
-            $response['status'] = "flase";
-            $response['field'] = "username";
-        }
-
-        // Validate first name
-        if (empty($form_data['first_name'])) {
-            $response['msg'] = "First name is required.";
-            $response['status'] = "flase";
-            $response['field'] = "first_name";
-        } elseif (!preg_match("/^[a-zA-Z ]*$/", $form_data['first_name'])) {
-            $response['msg'] =  = "Only letters and white space allowed in first name.";
-            $response['status'] = "flase";
-            $response['field'] = "first_name";
-        }
-
-            // Validate last name
-    if (empty($form_data['last_name'])) {
-        $response['msg'] = "Last name is required.";
+    // Validate username
+    if (empty($form_data['username'])) {
+        $response['msg'] = "Username is required.";
         $response['status'] = "flase";
-        $response['field'] = "last_name";
-    } elseif (!preg_match("/^[a-zA-Z ]*$/", $form_data['last_name'])) {
-        $response['msg'] = "Only letters and white space allowed in last name.";
+        $response['field'] = "username";
+    } elseif (!preg_match("/^[a-zA-Z0-9]*$/", $form_data['username'])) {
+        $response['msg'] = "Only letters and numbers allowed in username.";
         $response['status'] = "flase";
-        $response['field'] = "last_name";
+        $response['field'] = "username";
     }
-    
 
     // Validate email
     if (empty($form_data['email'])) {
@@ -67,4 +44,30 @@ function validateSignupForm($form_data) {
         $response['status'] = "flase";
         $response['field'] = "email";
     }
+
+    // Validate last name
+    if (empty($form_data['last_name'])) {
+        $response['msg'] = "Last name is required.";
+        $response['status'] = "flase";
+        $response['field'] = "last_name";
+    } elseif (!preg_match("/^[a-zA-Z ]*$/", $form_data['last_name'])) {
+        $response['msg'] = "Only letters and white space allowed in last name.";
+        $response['status'] = "flase";
+        $response['field'] = "last_name";
+    }
+                
+
+    // Validate first name
+    if (empty($form_data['first_name'])) {
+        $response['msg'] = "First name is required.";
+        $response['status'] = "flase";
+        $response['field'] = "first_name";
+    } elseif (!preg_match("/^[a-zA-Z ]*$/", $form_data['first_name'])) {
+        $response['msg'] =  = "Only letters and white space allowed in first name.";
+        $response['status'] = "flase";
+        $response['field'] = "first_name";
+    }
+
+
+
 
