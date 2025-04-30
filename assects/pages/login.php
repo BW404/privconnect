@@ -9,6 +9,7 @@ include('../php/config.php');
 if (isset($conn)) {
     $conn->close();
 }
+print_r($_SESSION['error']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
