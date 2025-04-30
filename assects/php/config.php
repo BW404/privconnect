@@ -1,4 +1,6 @@
 <?php
+// // Start session
+session_start();
 // Database configuration
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'privconnect_db');
