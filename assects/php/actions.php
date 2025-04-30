@@ -2,5 +2,9 @@
 require_once 'functions.php';
 if(isset($_GET['signup'])) {
     $response=validateSignupForm($_POST);
-    print_r($response);
+    if($response['status'] == false) {
+        $_SESSION['error'] = $response
+        header("Location: ../pages/login.php");
+        exit();
+    }
 }
