@@ -10,8 +10,11 @@ function validateSignupForm($form_data) {
     if (empty($form_data['first_name'])) {
         $response['msg'] = "First name is required.";
         $response['status'] = "flase";
+        $response['field'] = "first_name";
     } elseif (!preg_match("/^[a-zA-Z ]*$/", $form_data['first_name'])) {
-        $errors[] = "Only letters and white space allowed in first name.";
+        $response['msg'] =  = "Only letters and white space allowed in first name.";
+        $response['status'] = "flase";
+        $response['field'] = "first_name";
     }
 
     // Validate last name
