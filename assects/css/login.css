@@ -208,6 +208,10 @@ input[type="checkbox"] {
   transform-style: preserve-3d;
 }
 
+.card-front{
+  padding-top: 50px;
+
+}
 .card-back {
   transform: rotateY(180deg);
 }
