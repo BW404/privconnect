@@ -191,7 +191,7 @@ input[type="checkbox"] {
 
 .checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
   transform: rotateY(180deg);
-  height: 130%;
+  height: 120%;
 }
 
 .card-front,
