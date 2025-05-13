@@ -110,3 +110,26 @@ function createUser($form_data) {
     $run = mysqli_query($conn, $query);
     return $run;
 }
+
+
+// Function to validate login form
+function validateLoginForm($form_data) {
+    $response = array('status'=> true);
+    
+    // Validate password
+    if (empty($form_data['password'])) {
+        $response['msg'] = "Password is required.";
+        $response['status'] = false;
+        $response['field'] = "password";
+    }
+
+    // Validate username
+    if (empty($form_data['username'])) {
+        $response['msg'] = "Username is required.";
+        $response['status'] = false;
+        $response['field'] = "username";
+    } 
+
+    return $response;
+
+}
