@@ -105,7 +105,7 @@ function isUsernameRegistered($username) {
 // for creating a new user
 function createUser($form_data) {
     global $conn;
-    $query = "INSERT INTO users (first_name,last_name,gender,email,username,password) VALUES ('".$form_data['username']."', '".$form_data['email']."', '".$form_data['password']."', '".$form_data['first_name']."', '".$form_data['last_name']."')";
+    $query = "INSERT INTO users (first_name,last_name,gender,email,username,password) VALUES ('".$form_data['first_name']."', '".$form_data['last_name']."', '".$form_data['gender']."', '".$form_data['email']."', '".$form_data['username']."','".$form_data['username']."', '".$form_data['password']."')";
     $run = mysqli_query($conn, $query);
     return $run;
 }
