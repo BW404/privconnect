@@ -64,6 +64,14 @@ function validateSignupForm($form_data) {
     }
     return $response;
 
+    // error for duplicate email
+    if (!isEmailRegistered($form_data['email'])) {
+        $response['msg'] = "Email id already registred.";
+        $response['status'] = false;
+        $response['field'] = "first_name";
+    } 
+    return $response;
+
 }
 
 // Function to check if email is already registered
