@@ -1,5 +1,6 @@
 <?php
 require_once 'functions.php';
+// for signup
 if(isset($_GET['signup'])) {
     $response=validateSignupForm($_POST);
     if($response['status'] == false) {
@@ -21,3 +22,5 @@ if(isset($_GET['signup'])) {
     }
    
 }
+
+// for login
