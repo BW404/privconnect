@@ -66,7 +66,7 @@ function validateSignupForm($form_data) {
 
 }
 
-
+// Function to check if email is already registered
 function isEmailRegistered($email) {
     global $conn;
     $query = "SELECT count(*) as row FROM users WHERE email = '$email'";
@@ -76,3 +76,13 @@ function isEmailRegistered($email) {
 
 
 }
+// Function to check if username is already registered
+function isUsernameRegistered($username) {
+    global $conn;
+    $query = "SELECT count(*) as row FROM users WHERE username = '$username'";
+    $run = mysqli_query($conn, $query);
+    $return_data = mysqli_fetch_assoc($run);
+    return $return_data['row'];
+}
+
+
