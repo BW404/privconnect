@@ -134,4 +134,13 @@ function validateLoginForm($form_data) {
 
 }
 
-fun
+function checkUser($form_data) {
+    global $conn;
+    $query = "SELECT * FROM users WHERE username = '".$form_data['username']."' AND password = '".$form_data['password']."'";
+    $run = mysqli_query($conn, $query);
+    if (mysqli_num_rows($run) > 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
