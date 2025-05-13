@@ -8,7 +8,16 @@ if(isset($_GET['signup'])) {
         exit();
     }
     else{
-        if()
+        if(createUser($_POST)){
+            $_SESSION['success'] = "Account created successfully.";
+            header("Location: ../pages/login.php?signup");
+            exit();
+        }
+        else{
+            $_SESSION['error'] = "Error creating account.";
+            header("Location: ../pages/login.php?signup");
+            exit();
+        }
     }
    
 }
