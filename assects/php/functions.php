@@ -64,14 +64,14 @@ function validateSignupForm($form_data) {
     }
 
     // error for duplicate email
-    if (!isEmailRegistered($form_data['email'])) {
+    if (isEmailRegistered($form_data['email'])) {
         $response['msg'] = "Email id already registred.";
         $response['status'] = false;
         $response['field'] = "email";
     } 
 
     // error for duplicate username
-    if (!isUsernameRegistered($form_data['username'])) {
+    if (isUsernameRegistered($form_data['username'])) {
         $response['msg'] = "Username already registred.";
         $response['status'] = false;
         $response['field'] = "username";
