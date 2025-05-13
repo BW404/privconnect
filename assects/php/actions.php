@@ -8,7 +8,7 @@ if(isset($_GET['signup'])) {
         exit();
     }
     else{
-       echo isEmailRegistered('taj3667@gmail.com');
+    //    echo isEmailRegistered('taj3667@gmail.com');
     }
    
 }
