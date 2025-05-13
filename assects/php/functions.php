@@ -135,12 +135,31 @@ function validateLoginForm($form_data) {
 }
 
 function checkUser($form_data) {
-    global $conn;
-    $query = "SELECT * FROM users WHERE username = '".$form_data['username']."' AND password = '".$form_data['password']."'";
-    $run = mysqli_query($conn, $query);
-    if (mysqli_num_rows($run) > 0) {
-        return true;
-    } else {
+    function checkUser($form_data) {
+        global $conn;
+    
+        // Use prepared statements to prevent SQL injection
+        $query = "SELECT * FROM users WHERE username = ?";
+        $run = mysqli_prepare($conn, $query);
+    
+        if ($run) {
+            mysqli_stmt_bind_param($run, "s", $form_data['username']);
+            mysqli_stmt_execute($run);
+            $result = mysqli_stmt_get_result($run);
+    
+            if ($row = mysqli_fetch_assoc($result)) {
+                // Verify the password
+                if (password_verify($form_data['password'], $row['password'])) {
+                    mysqli_stmt_close($run);
+                    return true;
+                }
+            }
+    
+            mysqli_stmt_close($run);
+        } else {
+            // Log or handle the error
+            error_log("MySQL Error: " . mysqli_error($conn));
+        }
+    
         return false;
     }
-}
