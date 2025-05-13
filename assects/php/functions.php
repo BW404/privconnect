@@ -71,10 +71,8 @@ function isEmailRegistered($email) {
     global $conn;
     $query = "SELECT count(*) as row FROM users WHERE email = '$email'";
     $run = mysqli_query($conn, $query);
+    $return_data = mysqli_fetch_assoc($run);
+    return $return_data;
 
-    if ($run) {
-        $result = mysqli_fetch_assoc($run);
-        return $result['row']; // Return the count value
-    }
-    return 0; // Return 0 if the query fails
+
 }
