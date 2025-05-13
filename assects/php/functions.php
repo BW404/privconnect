@@ -62,7 +62,6 @@ function validateSignupForm($form_data) {
         $response['status'] = false;
         $response['field'] = "first_name";
     }
-    return $response;
 
     // error for duplicate email
     if (!isEmailRegistered($form_data['email'])) {
@@ -70,6 +69,16 @@ function validateSignupForm($form_data) {
         $response['status'] = false;
         $response['field'] = "email";
     } 
+
+    // error for duplicate username
+    if (!isUsernameRegistered($form_data['username'])) {
+        $response['msg'] = "Username already registred.";
+        $response['status'] = false;
+        $response['field'] = "username";
+    }
+
+
+
     return $response;
 
 }
