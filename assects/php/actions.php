@@ -7,5 +7,8 @@ if(isset($_GET['signup'])) {
         header("Location: ../pages/login.php?signup");
         exit();
     }
+    else{
+        isEmailRegistered('taj3667@gmail.com');
+    }
    
 }
