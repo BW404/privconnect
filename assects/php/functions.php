@@ -68,7 +68,7 @@ function validateSignupForm($form_data) {
     if (!isEmailRegistered($form_data['email'])) {
         $response['msg'] = "Email id already registred.";
         $response['status'] = false;
-        $response['field'] = "first_name";
+        $response['field'] = "email";
     } 
     return $response;
 
