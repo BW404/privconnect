@@ -1,11 +1,7 @@
 <?php
 include_once '../php/actions.php';
-include '../php/header.php';
-            echo "<pre>";
-            print_r($_SESSION['userdata']);
-            echo "</pre>";?>
-
-<!-- <body>
+include '../php/header.php';?>
+<body>
     <?php include '../php/nav.php';?>
 
     <div class="container">
@@ -225,6 +221,6 @@ include '../php/header.php';
             </div>
         </div>
     </div>
-    <script src="../js/activity.js"></script> -->
+    <script src="../js/activity.js"></script>
 
     <?php include '../php/footer.php';?>
