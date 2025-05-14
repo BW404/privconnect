@@ -1,7 +1,7 @@
 <?php
 include_once '../php/actions.php';
 include '../php/header.php';?>
-<body>
+<!-- <body>
     <?php include '../php/nav.php';?>
 
     <div class="container">
@@ -77,7 +77,6 @@ include '../php/header.php';?>
                 <div class="post-input-conatiner">
                     <textarea rows="3" placeholder="What's you mind, Jhon?"></textarea>
                     <div class="add-post-links">
-                        <!-- <a href="#"><img src="../icons/live-video.png" alt="">Live Video</a> -->
                         <a href="#"><img src="../icons/photo.png" alt="">Phot/Video</a>
                         <a href="#"><img src="../icons/feeling.png" alt="">Feeling/Activity</a>
                         <button type="button" class="post-btn">Post</button>
@@ -222,6 +221,6 @@ include '../php/header.php';?>
             </div>
         </div>
     </div>
-    <script src="../js/activity.js"></script>
+    <script src="../js/activity.js"></script> -->
 
     <?php include '../php/footer.php';?>
