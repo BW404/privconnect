@@ -14,4 +14,5 @@
             </div>
             <div class="nav-user-icon online">
                 <img src="../icons/profile-pic.png" alt="profile-pic">
+                
     </nav>
