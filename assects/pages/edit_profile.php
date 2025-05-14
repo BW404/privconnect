@@ -27,7 +27,7 @@ include '../php/header.php'; ?>
                 <div class="form-group">
                     <div class="form-group">
                         <label for="ussername">Username</label>
-                        <input type="text" id="username" name="username" class="form-style" value="<?=$user['username']?>">
+                        <input type="text" id="username" name="username" class="form-style" value="<?=$user['username']?>" disabled>
                     </div>
                     <label for="first_name">First Name</label>
                     <input type="text" id="first_name" name="first_name" class="form-style" value="<?=$user['first_name']?>">
