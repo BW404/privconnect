@@ -139,10 +139,10 @@ include '../php/header.php';?>
 
 
              <div class="sidebar-title">
-                <h4>
-                    Conversation
-                </h4>
-                <div class="chat-container">
+                 <div class="chat-container">
+                    <h4>
+                        Conversation
+                    </h4>
     <div class="chat-header">
         <h4>Chat with <span id="chat-user-name">User</span></h4>
     </div>
