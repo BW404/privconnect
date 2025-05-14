@@ -37,6 +37,11 @@ include '../php/header.php'; ?>
                     <input type="email" id="email" name="email" class="form-style" value="<?=$user['email']?>">
                 </div>
                 <div class="form-group">
+                    <label for="ussername">Email</label>
+                    <input type="text" id="username" name="username" class="form-style" value="<?=$user['username']?>" disabled>
+                </div>
+
+                <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" id="password" name="password" class="form-style" placeholder="Enter a new password">
                 </div>
