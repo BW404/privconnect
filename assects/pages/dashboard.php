@@ -49,17 +49,7 @@ include '../php/header.php';?>
                 </div>
                 <p>Roy Clark</p>
             </div> -->
-            <div class="online-list">
-    <?php
-    $users = getAllUsers(); // Fetch all users except the logged-in user
-    foreach ($users as $user) {
-        echo '<div class="online" onclick="startChat(' . $user['id'] . ', \'' . $user['first_name'] . ' ' . $user['last_name'] . '\')">';
-        echo '<img src="../photos/profile/' . $user['profile_pic'] . '" alt="">';
-        echo '<p>' . $user['first_name'] . ' ' . $user['last_name'] . '</p>';
-        echo '</div>';
-    }
-    ?>
-</div>
+
 
 
 
