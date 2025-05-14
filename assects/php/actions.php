@@ -71,7 +71,7 @@ if (isset($_GET['addpost'])) {
         exit();
     }
     else{
-        if(addPost($_POST,$_FILES)){
+        if(createPost($_POST,$_FILES)){
             $_SESSION['success'] = "Post added successfully.";
             header("Location: ../pages/dashboard.php?addpost");
             exit();
