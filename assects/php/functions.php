@@ -235,3 +235,4 @@ function updateProfile($form_data,$image_data) {
     $run = mysqli_query($conn, $query);
     return $run;
 }
+}
