@@ -48,3 +48,25 @@ if (isset($_GET['login'])) {
 }
 
 
+if (isset($_GET['updateprofile'])) {
+
+    
+    // $response = validateProfileForm($_POST);
+    // if ($response['status'] == false) {
+    //     $_SESSION['error'] = $response;
+    //     header("Location: ../pages/edit_profile.php?updateprofile");
+    //     exit();
+    // } else {
+    //     if (updateUserProfile($_POST)) {
+    //         $_SESSION['success'] = "Profile updated successfully.";
+    //         header("Location: ../pages/edit_profile.php?updateprofile");
+    //         exit();
+    //     } else {
+    //         $_SESSION['error'] = "Error updating profile.";
+    //         header("Location: ../pages/edit_profile.php?updateprofile");
+    //         exit();
+    //     }
+    // }
+}
+
+
