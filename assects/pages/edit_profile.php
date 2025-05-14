@@ -37,7 +37,7 @@ include '../php/header.php'; ?>
                     <input type="email" id="email" name="email" class="form-style" value="<?=$user['email']?>">
                 </div>
                 <div class="form-group">
-                    <label for="ussername">Email</label>
+                    <label for="ussername">Username</label>
                     <input type="text" id="username" name="username" class="form-style" value="<?=$user['username']?>" disabled>
                 </div>
 
