@@ -333,26 +333,7 @@ function createPost($text, $image){
         $target_file = $target_dir . basename($image['name']);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-        // Check if the file is an image
-        $check = getimagesize($image['tmp_name']);
-        if ($check === false) {
-            echo "File is not an image.";
-            return false;
-        }
-
-        // Check file size (5MB limit)
-        if ($image['size'] > 5000000) {
-            echo "Sorry, your file is too large.";
-            return false;
-        }
-
-        // Allow certain file formats
-        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
-            echo "Sorry, only JPG, JPEG, PNG files are allowed.";
-            return false;
-        }
-
-        // Upload the file
+            // Upload the file
         if (move_uploaded_file($image['tmp_name'], $target_file)) {
             // Update the profile picture in the database
             global $conn;
