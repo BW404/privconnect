@@ -103,7 +103,8 @@ include '../php/header.php';?>
                 echo '<a href="#"> <i class="fas fa-ellipsis-v"></i></a>';
                 echo '</div>';
 
-                                if($post['image']) {
+                
+                if($post['image']) {
                     echo '<img src="../photos/posts/'.$post['image'].'" alt="" class="post-img">';
                 }
                 
