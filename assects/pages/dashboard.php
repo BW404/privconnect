@@ -75,7 +75,7 @@ include '../php/header.php';?>
                 </div>
                 <form>
                 <div class="post-input-conatiner">
-                    <textarea rows="3" placeholder="What's you mind, Jhon?"></textarea>
+                    <textarea rows="3" name placeholder="What's you mind, Jhon?"></textarea>
                     <div class="add-post-links">
                         <a href="#"><img src="../icons/photo.png" alt="">Phot/Video</a>
                         <!-- <a href="#"><img src="../icons/feeling.png" alt="">Feeling/Activity</a> -->
