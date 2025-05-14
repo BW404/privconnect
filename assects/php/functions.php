@@ -312,7 +312,7 @@ function updateUser($form_data,$file_data) {
 
 
 // add post
-function validatePostForm($form_data,$file_data) {
+function validatePost($form_data,$file_data) {
     $response = array('status'=> true);
     
     // Validate post text
