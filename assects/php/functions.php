@@ -347,6 +347,35 @@ function createPost($text, $image) {
         echo "No image uploaded.";
         return false;
     }
+    // add option to post without image 
+    if (empty($image['post_image']['name'])) {
+        global $conn;
+        $query = "INSERT INTO posts (user_id, post_text) VALUES ('".$_SESSION['userdata']['id']."', '".$text."')";
+        $run = mysqli_query($conn, $query);
+        return $run;
+    }
+    if (empty($text)) {
+        global $conn;
+        $query = "INSERT INTO posts (user_id, post_img) VALUES ('".$_SESSION['userdata']['id']."', '".$image['post_image']['name']."')";
+        $run = mysqli_query($conn, $query);
+        return $run;
+    }
+    if (empty($text) && empty($image['post_image']['name'])) {
+        return false;
+    }
+    if (empty($text) && !empty($image['post_image']['name'])) {
+        global $conn;
+        $query = "INSERT INTO posts (user_id, post_img) VALUES ('".$_SESSION['userdata']['id']."', '".$image['post_image']['name']."')";
+        $run = mysqli_query($conn, $query);
+        return $run;
+    }
+    if (empty($image['post_image']['name']) && !empty($text)) {
+        global $conn;
+        $query = "INSERT INTO posts (user_id, post_text) VALUES ('".$_SESSION['userdata']['id']."', '".$text."')";
+        $run = mysqli_query($conn, $query);
+        return $run;
+    }
+
     
 
 
