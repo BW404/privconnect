@@ -118,7 +118,7 @@ sendMessageBtn.addEventListener("click", () => {
 
 
 
-const userList = document.getElementById("user-list");
+const userList = document.getElementById("online-list");
 const chatUserName = document.getElementById("chat-user-name");
 
 userList.addEventListener("click", (event) => {
