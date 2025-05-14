@@ -4,7 +4,7 @@ include '../php/header.php';
 
 
 if (!isset($_SESSION['Auth'])) {
-    header("Location: ../index.php");
+    // header("Location: ../index.php");
     exit();
 }
 ?>
