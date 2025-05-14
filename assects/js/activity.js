@@ -72,7 +72,7 @@ sendMessageBtn.addEventListener("click", () => {
 
 
 function startChat(userId, userName) {
-    receiverId = userId;
-    document.getElementById("chat-user-name").textContent = userName;
-    fetchMessages();
+    receiverId = userId; // Set the receiver ID to the selected user's ID
+    document.getElementById("chat-user-name").textContent = userName; // Update the chat header
+    fetchMessages(); // Fetch chat messages for the selected user
 }
