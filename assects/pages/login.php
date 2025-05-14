@@ -57,9 +57,9 @@ if (isset($conn)) {
                                                     <?php
                                                     if(isset($_SESSION['error'])){
                                                     $error = $_SESSION['error'];
-                                                    if($error['field'] == "invalid"){
+                                                    
                                                         echo '<p class="error-message">'.$error['msg'].'</p>';
-                                                    }
+                                                    
                                                 }
                                                     ?>
                                                 <button type="submit" name="login" class="btn">Submit</button>
