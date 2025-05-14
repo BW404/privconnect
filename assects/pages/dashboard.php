@@ -73,7 +73,7 @@ include '../php/header.php';?>
                         </small>
                     </div>
                 </div>
-                <form></form>
+                <form>
                 <div class="post-input-conatiner">
                     <textarea rows="3" placeholder="What's you mind, Jhon?"></textarea>
                     <div class="add-post-links">
@@ -82,6 +82,7 @@ include '../php/header.php';?>
                         <button type="button" class="post-btn">Post</button>
                     </div>
                 </div>
+                </form>
             </div>
 
             <div class="post-container">
