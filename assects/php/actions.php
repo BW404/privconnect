@@ -78,4 +78,47 @@ if (isset($_GET['addpost'])) {
     }
 }
 
+// Chat API handlers
+session_start();
+
+if (!isset($_SESSION['userdata'])) {
+    http_response_code(401);
+    echo json_encode(['status' => 'error', 'message' => 'Unauthorized']);
+    exit();
+}
+
+$userId = $_SESSION['userdata']['id'];
+
+// Fetch users for chat
+if (isset($_GET['fetch_users']) && $_GET['fetch_users'] == 'true') {
+    $users = getAllUsers();
+    echo json_encode($users);
+    exit();
+}
+
+// Fetch messages with a specific user
+if (isset($_GET['fetch_messages']) && $_GET['fetch_messages'] == 'true' && isset($_GET['receiver_id'])) {
+    $receiverId = intval($_GET['receiver_id']);
+    $messages = getChatMessages($userId, $receiverId);
+    echo json_encode($messages);
+    exit();
+}
+
+// Send a new message
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['send_message']) && $_POST['send_message'] == 'true') {
+    $receiverId = intval($_POST['receiver_id']);
+    $message = trim($_POST['message']);
+    if ($message !== '') {
+        $success = sendMessage($userId, $receiverId, $message);
+        if ($success) {
+            echo json_encode(['status' => 'success']);
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Failed to send message']);
+        }
+    } else {
+        echo json_encode(['status' => 'error', 'message' => 'Message is empty']);
+    }
+    exit();
+}
+
 
