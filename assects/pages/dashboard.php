@@ -77,7 +77,10 @@ include '../php/header.php';?>
                 <div class="post-input-conatiner">
                     <textarea rows="3" name="post_text" placeholder="What's you mind, Jhon?"></textarea>
                     <div class="add-post-links">
-                        <a href="#"><img src="../icons/photo.png" alt="">Phot/Video</a>
+                    a href="#" onclick="document.getElementById('fileInput').click();">
+    <img src="../icons/photo.png" alt="">Photo/Video
+</a>
+<input type="file" id="fileInput" style="display: none;" accept="image/*,video/*">
                         <!-- <a href="#"><img src="../icons/feeling.png" alt="">Feeling/Activity</a> -->
                         <button type="button" class="post-btn">Post</button>
                     </div>
