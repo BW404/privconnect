@@ -49,6 +49,11 @@ include '../php/header.php';?>
                 </div>
                 <p>Roy Clark</p>
             </div> -->
+            <div id="user-list">
+    <!-- Dynamically filled by JavaScript or server-side -->
+    <div class="user" data-id="2" data-name="John Doe">John Doe</div>
+    <div class="user" data-id="3" data-name="Jane Smith">Jane Smith</div>
+</div>
 
 
 
