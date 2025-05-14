@@ -205,4 +205,10 @@ function validateUpdateForm($form_data,$image_data) {
     $response = array('status'=> true);
 
     
-// f
+// function for updating profile
+function updateprofile($form_data,$image_data) {
+    global $conn;
+    $query = "UPDATE users SET first_name = '".$form_data['first_name']."', last_name = '".$form_data['last_name']."', email = '".$form_data['email']."' WHERE id = '".$form_data['id']."'";
+    $run = mysqli_query($conn, $query);
+    return $run;
+}
