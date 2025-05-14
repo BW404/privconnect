@@ -120,6 +120,15 @@ echo "</pre>";
                 // echo '<div><img src="../icons/like.png" alt="">'.$post['likes'].'</div>';
                 // echo '<div><img src="../icons/comments.png" alt="">'.$post['comments'].'</div>';
                 // echo '<div><img src="../icons/share.png" alt="">'.$post['shares'].'</div>';
+                echo '<div>
+                <img src="../icons/like.png" alt="">897K
+            </div>
+            <div>
+                <img src="../icons/comments.png" alt="">458K
+            </div>
+            <div>
+                <img src="../icons/share.png" alt="">243k
+            </div>';
                 echo '</div>';
                 echo '<div class="post-profile-icon">';
                 echo '<img src="./Socialbook_img/profile-pic.png" alt=""><i class="fas fa-caret-down"></i>';
