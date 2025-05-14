@@ -93,9 +93,9 @@ include '../php/header.php';?>
             <?php 
             // Fetch posts from the database
             $posts=getPosts();
-            echo "<pre>";
-print_r(getPosts());
-echo "</pre>";
+//             echo "<pre>";
+// print_r(getPosts());
+// echo "</pre>";
             foreach($posts as $post) {
                 // Display each post
                 echo '<div class="post-container">';
