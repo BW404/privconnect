@@ -73,7 +73,7 @@ include '../php/header.php';?>
                         </small>
                     </div>
                 </div>
-                <form>
+                <form methord="post" action=>
                 <div class="post-input-conatiner">
                     <textarea rows="3" name="post_text" placeholder="What's you mind, Jhon?"></textarea>
                     <div class="add-post-links">
