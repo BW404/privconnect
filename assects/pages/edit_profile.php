@@ -29,7 +29,5 @@ include '../php/header.php'; ?>
             <button type="submit" class="btn">Save Changes</button>
         </form>
     </div>
+    <script src="../js/activity.js"></script>    
     <?php include '../php/footer.php'; ?>
-    <script src="../js/activity.js"></script>
-</body>
-</html>
