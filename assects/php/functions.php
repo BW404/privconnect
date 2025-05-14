@@ -208,7 +208,7 @@ function validateUpdateForm($form_data,$image_data) {
 // function for updating profile
 function updateProfile($form_data,$image_data) {
     global $conn;
-    if(!form_data['password']){
+    if(!$form_data['password']){
         $form_data['password'] = getUserPassword($form_data['id']);
     }
     else{
