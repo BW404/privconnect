@@ -1,3 +1,4 @@
+
 <?php global $user;
 echo $user;
 ?>
