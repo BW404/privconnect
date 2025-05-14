@@ -205,15 +205,16 @@ function validateUpdateForm($form_data,$image_data) {
     $response = array('status'=> true);
     
 
-    // Validate username
-    if (empty($form_data['username'])) {
-        $response['msg'] = "Username is required.";
+
+    // Validate email
+    if (empty($form_data['email'])) {
+        $response['msg'] = "Email is required.";
         $response['status'] = false;
-        $response['field'] = "username";
-    } elseif (!preg_match("/^[a-zA-Z0-9]*$/", $form_data['username'])) {
-        $response['msg'] = "Only letters and numbers allowed in username.";
+        $response['field'] = "email";
+    } elseif (!filter_var($form_data['email'], FILTER_VALIDATE_EMAIL)) {
+        $response['msg'] = "Invalid email format.";
         $response['status'] = false;
-        $response['field'] = "username";
+        $response['field'] = "email";
     }
 
     // Validate last name
