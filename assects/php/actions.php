@@ -30,7 +30,7 @@ if (isset($_GET['login'])) {
 
     if ($response['status'] == false) {
         $_SESSION['error'] = $response;
-        $_SESSION['msg'] = "Invalid Username or password"
+        $_SESSION['msg'] = "Invalid Username or password";
 
         header("Location: ../pages/login.php?login");
         exit();
@@ -43,5 +43,5 @@ if (isset($_GET['login'])) {
             header("Location: ../pages/login.php?login");
             exit();
         }
-    }
+    
 }
