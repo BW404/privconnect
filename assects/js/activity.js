@@ -21,3 +21,51 @@ document.addEventListener("click", (event) => {
         dropdownMenu.style.display = "none";
     }
 });
+
+
+
+
+const chatMessages = document.getElementById("chat-messages");
+const chatMessageInput = document.getElementById("chat-message-input");
+const sendMessageBtn = document.getElementById("send-message-btn");
+const receiverId = 2; // Replace with dynamic receiver ID
+
+// Fetch messages every 2 seconds
+setInterval(fetchMessages, 2000);
+
+function fetchMessages() {
+    fetch(`chat.php?fetch_messages=true&receiver_id=${receiverId}`)
+        .then(response => response.json())
+        .then(messages => {
+            chatMessages.innerHTML = "";
+            messages.forEach(msg => {
+                const messageDiv = document.createElement("div");
+                messageDiv.classList.add("message");
+                messageDiv.classList.add(msg.sender_id == receiverId ? "received" : "sent");
+                messageDiv.textContent = msg.message;
+                chatMessages.appendChild(messageDiv);
+            });
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+}
+
+// Send a message
+sendMessageBtn.addEventListener("click", () => {
+    const message = chatMessageInput.value.trim();
+    if (message) {
+        fetch("chat.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: `send_message=true&receiver_id=${receiverId}&message=${encodeURIComponent(message)}`
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                chatMessageInput.value = "";
+                fetchMessages();
+            } else {
+                alert("Failed to send message.");
+            }
+        });
+    }
+});
