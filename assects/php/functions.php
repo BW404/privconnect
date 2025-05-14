@@ -245,4 +245,6 @@ function validateUpdateForm($form_data,$file_data) {
         $response['status'] = false;
         $response['field'] = "first_name";
     }
+
+    return $response;
 }
