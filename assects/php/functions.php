@@ -130,6 +130,15 @@ function validateLoginForm($form_data) {
         $response['field'] = "username";
     } 
 
+    // check if username is registered
+    if (!checkUser($form_data)['status']) {
+        $response['msg'] = "Username is required.";
+        $response['status'] = false;
+        $response['field'] = "username";
+    } 
+
+
+
     return $response;
 
 }
