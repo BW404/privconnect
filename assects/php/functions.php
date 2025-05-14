@@ -204,34 +204,5 @@ function checkUser($form_data) {
 function validateUpdateForm($form_data,$image_data) {
     $response = array('status'=> true);
     
+    
 
-
-    // Validate email
-    if (empty($form_data['email'])) {
-        $response['msg'] = "Email is required.";
-        $response['status'] = false;
-        $response['field'] = "email";
-    } elseif (!filter_var($form_data['email'], FILTER_VALIDATE_EMAIL)) {
-        $response['msg'] = "Invalid email format.";5
-        $response['status'] = false;
-        $response['field'] = "email";
-    }
-
-    // Validate last name
-    if (empty($form_data['last_name'])) {
-        $response['msg'] = "Last name is required.";
-        $response['status'] = false;
-        $response['field'] = "last_name";
-    } elseif (!preg_match("/^[a-zA-Z ]*$/", $form_data['last_name'])) {
-        $response['msg'] = "Only letters and white space allowed in last name.";
-        $response['status'] = false;
-        $response['field'] = "last_name";
-    }
-                
-
-    // Validate first name
-    if (empty($form_data['first_name'])) {
-        $response['msg'] = "First name is required.";
-        $response['status'] = false;
-        $response['field'] = "first_name";
-    }
