@@ -71,7 +71,7 @@ if (isset($_GET['updateprofile'])) {
     //         exit();
     //     }
     updateUser($_POST,$_FILES)
-    }
+    
     // print_r($_POST);
     // print_r($_FILES);
 
