@@ -1,6 +1,10 @@
 <?php
 include_once '../php/actions.php';
 include '../php/header.php';?>
+            echo "<pre>";
+            print_r($_SESSION['userdata']);
+            echo "</pre>";
+
 <!-- <body>
     <?php include '../php/nav.php';?>
 
