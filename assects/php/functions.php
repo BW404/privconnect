@@ -196,3 +196,7 @@ function checkUser($form_data) {
 
     return false;
 }
+
+
+
+// Function to validate update profile form
