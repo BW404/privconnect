@@ -142,8 +142,7 @@ include '../php/header.php';?>
                 <h4>
                     Conversation
                 </h4>
-                
-                <!-- <a href="#">
+                <a href="#">
                     Hide Chat
                 </a>
             </div>
@@ -166,7 +165,7 @@ include '../php/header.php';?>
                 <p>Ben Taylor</p>
             </div>
         </div>
-    </div> -->
+    </div>
     <script src="../js/activity.js"></script>
 
     <?php include '../php/footer.php';?>
