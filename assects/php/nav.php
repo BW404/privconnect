@@ -1,7 +1,7 @@
 
 <?php global $user;
 $user = $_SESSION['userdata'];
-echo $user;
+echo $user['id'];
 ?>
 
 <nav>        
