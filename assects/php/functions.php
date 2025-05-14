@@ -330,7 +330,7 @@ function createPost($text, $image) {
     // $text = $text['post_text']; 
     // Sanitize input
     $userId = $_SESSION['userdata']['id'];
-    $postText = mysqli_real_escape_string($conn, $text['post_text']);
+    $postText = $text['post_text'];
     $postImage = !empty($image['post_image']['name']) ? mysqli_real_escape_string($conn, $image['post_image']['name']) : null;
 
     // Handle image upload
