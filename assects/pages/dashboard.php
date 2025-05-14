@@ -81,7 +81,7 @@ include '../php/header.php';?>
                     <img src="../icons/photo.png" alt="">Photo/Video
                     </a>
                     <input type="file" id="fileInput" name="post_image" style="display: none;" accept="image/*">
-                        <button type="button" class="post-btn">Post</button>
+                        <button type="submit" class="post-btn">Post</button>
                     </div>
                 </div>
                 </form>
