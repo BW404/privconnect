@@ -3,7 +3,7 @@
 include('../php/config.php');
 
 // // Start session
-session_start();
+// session_start();
 
 // Close database connection
 if (isset($conn)) {
