@@ -358,5 +358,11 @@ function createPost($text, $image) {
 
 
 
-// funtion to get all posts
+// for getting post
+function getPosts() {
+    global $conn;
+    $query = "SELECT * FROM posts ORDER BY created_at DESC";
+    $run = mysqli_query($conn, $query);
+    return $run;
+}
 
