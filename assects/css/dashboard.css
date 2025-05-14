@@ -571,6 +571,32 @@ nav{
 
 
 
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background: #1b1b1b;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 10px;
+    width: 150px;
+}
+
+.dropdown-menu a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 3px;
+    transition: background 0.3s;
+}
+
+.dropdown-menu a:hover {
+    background: #dc143c;
+}
+
 
 
 

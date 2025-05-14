@@ -13,12 +13,12 @@
                 <input type="text" placeholder="Search">
             </div>
             <div class="nav-user-icon online" id="user_icon">
-    <img src="../icons/profile-pic.png" alt="profile-pic">
-    <div class="dropdown-menu" id="dropdown_menu">
-        <a href="#">Profile</a>
-        <a href="#">Settings</a>
-        <a href="#">Logout</a>
-    </div>
-</div>>
+                <img src="../icons/profile-pic.png" alt="profile-pic">
+                <div class="dropdown-menu" id="dropdown_menu">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="#">Logout</a>
+                </div>
+            </div>
 
     </nav>
