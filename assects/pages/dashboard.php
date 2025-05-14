@@ -31,17 +31,24 @@ include '../php/header.php';?>
                 </h4>
               </div>
 
-              <div id="user-list">
-    <h3>Users</h3>
-    <!-- User list will populate here -->
-</div>
-
-<div id="chat-container">
-    <h3>Chat with: <span id="chat-user-name">None</span></h3>
-    <div id="chat-messages"></div>
-    <input type="text" id="chat-message-input" placeholder="Type a message" style="width: 70%">
-    <button id="send-message-btn">Send</button>
-</div>
+            <div class="online-list">
+                <div class="online">
+                    <img src="../icons/member-2.png" alt="">
+                </div>
+                <p>Roy Clark</p>
+            </div>
+            <div class="online-list">
+                <div class="online">
+                    <img src="../icons/member-2.png" alt="">
+                </div>
+                <p>Roy Clark</p>
+            </div>
+            <div class="online-list">
+                <div class="online">
+                    <img src="../icons/member-2.png" alt="">
+                </div>
+                <p>Roy Clark</p>
+            </div>
 
 
 
@@ -132,39 +139,10 @@ include '../php/header.php';?>
 
 
              <div class="sidebar-title">
-                 <div class="chat-container">
-                    <h4>
-                        Conversation
-                    </h4>
-    <div class="chat-header">
-        <h4>Chat with <span id="chat-user-name">User</span></h4>
-    </div>
-    <div class="chat-messages" id="chat-messages">
-        <!-- Messages will be dynamically loaded here -->
-    </div>
-    <div class="chat-input">
-        <textarea id="chat-message-input" placeholder="Type a message..."></textarea>
-        <button id="send-message-btn">Send</button>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                <h4>
+                    Conversation
+                </h4>
+                
                 <!-- <a href="#">
                     Hide Chat
                 </a>
