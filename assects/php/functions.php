@@ -347,7 +347,7 @@ function createPost($text, $image) {
         echo "No image uploaded.";
         return false;
     }
-    }
+    
 
 
     global $conn;
