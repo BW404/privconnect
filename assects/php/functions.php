@@ -309,3 +309,19 @@ function updateUser($form_data,$file_data) {
     $run = mysqli_query($conn, $query);
     return $run;
 }
+
+
+// add post
+function validatePostForm($form_data,$file_data) {
+    $response = array('status'=> true);
+    
+    // Validate post text
+    if (empty($form_data['post_text'])) {
+        $response['msg'] = "Post text is required.";
+        $response['status'] = false;
+        $response['field'] = "post_text";
+    }
+
+    return $response;
+
+}
