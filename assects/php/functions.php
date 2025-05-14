@@ -327,7 +327,7 @@ function validatePost($form_data,$file_data) {
 
 // Function to add a post
 function createPost($text, $image) {
-    $text = $text['post_text']; 
+    // $text = $text['post_text']; 
     // Sanitize input
     $userId = $_SESSION['userdata']['id'];
     $postText = mysqli_real_escape_string($conn, $text['post_text']);
