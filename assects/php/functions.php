@@ -135,7 +135,9 @@ function validateLoginForm($form_data) {
         $response['msg'] = "Incorrect username or password.";
         $response['status'] = false;
         $response['field'] = "checkuser";
-    } 
+    }
+    // check if password is correct
+    
 
 
 
