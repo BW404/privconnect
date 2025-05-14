@@ -30,7 +30,7 @@ include '../php/header.php'; ?>
                 </div>
                 <div class="form-group">
                     <label for="last_name">Last Name</label>
-                    <input type="text" id="last_name" name="last_name" class="form-style" placeholder="Enter your last name" required>
+                    <input type="text" id="last_name" name="last_name" class="form-style" value="<?=$user['last_name']?>">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
