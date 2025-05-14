@@ -15,7 +15,7 @@
             <div class="nav-user-icon online" id="user_icon">
                 <img src="../icons/profile-pic.png" alt="profile-pic">
                 <div class="dropdown-menu" id="dropdown_menu">
-                    <a href="#">Profile</a>
+                    <a href="../pages/edit_profile.php">Profile</a>
                     <a href="#">Settings</a>
                     <a href="../../logout.php">Logout</a>
                 </div>
