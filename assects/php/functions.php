@@ -355,3 +355,8 @@ function createPost($text, $image) {
     $run = mysqli_query($conn, $query);
     return $run;
 }
+
+
+
+// funtion to get all posts
+
