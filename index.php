@@ -1,7 +1,8 @@
 <?php
 require_once 'assects/php/functions.php';
 
-
+echo "<pre>";
+print_r(getPosts());
 
 
 
