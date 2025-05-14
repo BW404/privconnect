@@ -73,7 +73,7 @@ include '../php/header.php';?>
                         </small>
                     </div>
                 </div>
-                <form method="post" action="../php/actions.php?adpost" enctype="multipart/form-data">
+                <form method="post" action="../php/actions.php?addpost" enctype="multipart/form-data">
                 <div class="post-input-conatiner">
                     <textarea rows="3" name="post_text" placeholder="What's you mind, Jhon?"></textarea>
                     <div class="add-post-links">
