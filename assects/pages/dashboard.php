@@ -135,7 +135,7 @@ include '../php/header.php';?>
             <button type="button" class="load-more-btn">Load More</button> -->
         </div>
        
-        <div? class="right-sidebar">
+        <div class="right-sidebar">
 
 
              <div class="sidebar-title">
@@ -155,7 +155,7 @@ include '../php/header.php';?>
     </div>
 </div>
         </div>
-        </div?
+        </div>
 
 
 
