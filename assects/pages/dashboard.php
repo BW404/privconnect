@@ -93,9 +93,9 @@ include '../php/header.php';?>
             <?php 
             // Fetch posts from the database
             $posts=getPosts();
-//             echo "<pre>";
-// print_r(getPosts());
-// echo "</pre>";
+            echo "<pre>";
+print_r(getPosts());
+echo "</pre>";
             foreach($posts as $post) {
                 // Display each post
                 echo '<div class="post-container">';
@@ -110,7 +110,7 @@ include '../php/header.php';?>
                 echo '<a href="#"> <i class="fas fa-ellipsis-v"></i></a>';
                 echo '</div>';
 
-                
+                echo '<p class="post-text">'.$post[].' <br><a href="#">#birthday-special</a></p>
                 if($post['post_img']) {
                     echo '<img src="../photos/posts/'.$post['post_img'].'" alt="" class="post-img">';
                 }
