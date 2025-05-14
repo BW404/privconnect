@@ -327,6 +327,7 @@ function validatePost($form_data,$file_data) {
 
 // Function to add a post
 function createPost($text, $image){
+    $text = $text['post_text'];
     // Check if a new profile picture is uploaded
     if (!empty($image['name'])) {
         $target_dir = "../photos/posts/";
