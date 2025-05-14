@@ -142,7 +142,36 @@ include '../php/header.php';?>
                 <h4>
                     Conversation
                 </h4>
-                <a href="#">
+                <div class="chat-container">
+    <div class="chat-header">
+        <h4>Chat with <span id="chat-user-name">User</span></h4>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+        <!-- Messages will be dynamically loaded here -->
+    </div>
+    <div class="chat-input">
+        <textarea id="chat-message-input" placeholder="Type a message..."></textarea>
+        <button id="send-message-btn">Send</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- <a href="#">
                     Hide Chat
                 </a>
             </div>
@@ -165,7 +194,7 @@ include '../php/header.php';?>
                 <p>Ben Taylor</p>
             </div>
         </div>
-    </div>
+    </div> -->
     <script src="../js/activity.js"></script>
 
     <?php include '../php/footer.php';?>
