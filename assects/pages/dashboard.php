@@ -153,8 +153,7 @@ include '../php/header.php';?>
         <textarea id="chat-message-input" placeholder="Type a message..."></textarea>
         <button id="send-message-btn">Send</button>
     </div>
-</div>
-        </div>
+
 
 
 
