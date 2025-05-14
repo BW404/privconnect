@@ -257,6 +257,7 @@ function updateUser($form_data,$file_data) {
     echo "<pre>";
     print_r($form_data);
     print_r($file_data);
+    echo $_SESSION['userdata']['id'];
     echo "</pre>";
     return true;
     // global $conn;
