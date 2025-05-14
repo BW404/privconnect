@@ -49,15 +49,6 @@ include '../php/header.php';?>
                 </div>
                 <p>Roy Clark</p>
             </div>
-
-
-
-
-
-
-
-
-
         </div>
         <div class="main-content">
 
@@ -87,15 +78,9 @@ include '../php/header.php';?>
                 </form>
             </div>
 
-
-
-
             <?php 
             // Fetch posts from the database
             $posts=getPosts();
-//             echo "<pre>";
-// print_r(getPosts());
-// echo "</pre>";
             foreach($posts as $post) {
                 // Display each post
                 echo '<div class="post-container">';
@@ -117,10 +102,6 @@ include '../php/header.php';?>
                 
                 echo '<div class="post-row">';
                 echo '<div class="activity-icons">';
-                // echo '<div><img src="../icons/like.png" alt="">'.$post['likes'].'</div>';
-                // echo '<div><img src="../icons/comments.png" alt="">'.$post['comments'].'</div>';
-                // echo '<div><img src="../icons/share.png" alt="">'.$post['shares'].'</div>';
-
                 echo '</div>';
                 echo '<div class="post-profile-icon">';
                 echo '<img src="./Socialbook_img/profile-pic.png" alt=""><i class="fas fa-caret-down"></i>';
@@ -130,42 +111,40 @@ include '../php/header.php';?>
             }
             ?>
 
-          
-<!--             
-            <button type="button" class="load-more-btn">Load More</button> -->
         </div>
        
         <div class="right-sidebar">
-
 
              <div class="sidebar-title">
                 <h4>
                     Conversation
                 </h4>
-                <a href="#">
+                <a href="#" id="hide-chat-link">
                     Hide Chat
                 </a>
             </div>
-            <div class="online-list">
-                <div class="online">
-                    <img src="../icons/member-2.png" alt="">
-                </div>
-                <p>Roy Clark</p>
+
+            <div id="user-list" class="user-list">
+                <!-- User list will be populated here by JS -->
             </div>
-            <div class="online-list">
-                <div class="online">
-                    <img src="../icons/member-3.png" alt="">
+
+            <div id="chat-container" class="chat-container" style="display:none;">
+                <div class="chat-header">
+                    <h5 id="chat-user-name">Select a user to chat</h5>
                 </div>
-                <p>Sieena Watson</p>
-            </div>
-            <div class="online-list">
-                <div class="online">
-                    <img src="../icons/member-4.png" alt="">
+                <div id="chat-messages" class="chat-messages">
+                    <!-- Chat messages will be populated here -->
                 </div>
-                <p>Ben Taylor</p>
+                <div class="chat-input">
+                    <textarea id="chat-message-input" placeholder="Type your message..."></textarea>
+                    <button id="send-message-btn">Send</button>
+                </div>
             </div>
+
         </div>
     </div>
     <script src="../js/activity.js"></script>
 
     <?php include '../php/footer.php';?>
+</body>
+</html>
