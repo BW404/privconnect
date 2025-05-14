@@ -17,7 +17,7 @@
                 <div class="dropdown-menu" id="dropdown_menu">
                     <a href="#">Profile</a>
                     <a href="#">Settings</a>
-                    <a href="#">Logout</a>
+                    <a href="../../logout.php">Logout</a>
                 </div>
             </div>
 
