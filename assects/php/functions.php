@@ -147,11 +147,14 @@ function checkUser($form_data) {
             mysqli_stmt_execute($run);
             $result = mysqli_stmt_get_result($run);
     
-            if ($row = mysqli_fetch_assoc($result)) {
+            if ($data = mysqli_fetch_assoc($result)) {
                 // Verify the password
                 if (password_verify($form_data['password'], $row['password'])) {
                     mysqli_stmt_close($run);
-                    return true;
+                    // return true;
+
+                    return $row; // Return the user data
+
                 }
             }
     
