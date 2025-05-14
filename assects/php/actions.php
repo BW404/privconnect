@@ -70,7 +70,7 @@ if (isset($_GET['updateprofile'])) {
     //         header("Location: ../pages/edit_profile.php?updateprofile");
     //         exit();
     //     }
-    if (updateUser($_POST,$_FILES))
+    updateUser($_POST,$_FILES)
     }
     // print_r($_POST);
     // print_r($_FILES);
