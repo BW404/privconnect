@@ -331,7 +331,7 @@ function createPost($text, $image){
     // Check if a new profile picture is uploaded
     if (!empty($image['name'])) {
         $target_dir = "../photos/posts/";
-        $target_file = $target_dir . basename($image['name']);
+        $target_file = $target_dir . basename($image['post_image']['name']);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
             // Upload the file
