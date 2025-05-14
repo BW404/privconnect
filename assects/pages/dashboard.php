@@ -73,6 +73,7 @@ include '../php/header.php';?>
                         </small>
                     </div>
                 </div>
+                <form></form>
                 <div class="post-input-conatiner">
                     <textarea rows="3" placeholder="What's you mind, Jhon?"></textarea>
                     <div class="add-post-links">
