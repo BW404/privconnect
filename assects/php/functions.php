@@ -328,25 +328,22 @@ function validatePost($form_data,$file_data) {
 // Function to add a post
 function createPost($text, $image) {
     $text = $text['post_text']; 
-    if (!empty($image['post_image']['name'])) {
-        $target_dir = "../photos/posts/";
-        $target_file = $target_dir . basename($image['post_image']['name']);
-        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+    // Sanitize input
+    $userId = $_SESSION['userdata']['id'];
+    $postText = mysqli_real_escape_string($conn, $text['post_text']);
+    $postImage = !empty($image['post_image']['name']) ? mysqli_real_escape_string($conn, $image['post_image']['name']) : null;
 
-        // Upload the file
-        if (move_uploaded_file($image['post_image']['tmp_name'], $target_file)) {
-            global $conn;
-            $query = "INSERT INTO posts (user_id, post_text, post_img) VALUES ('" . $_SESSION['userdata']['id'] . "', '" . $text . "', '" . $image['post_image']['name'] . "')";
-            $run = mysqli_query($conn, $query);
-            return $run;
-        } else {
+    // Handle image upload
+    if (!empty($postImage)) {
+        $targetDir = "../photos/posts/";
+        $targetFile = $targetDir . basename($postImage);
+        $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+
+        if (!move_uploaded_file($image['post_image']['tmp_name'], $targetFile)) {
             echo "Sorry, there was an error uploading your file.";
             return false;
         }
-    } else {
-        echo "No image uploaded.";
-        return false;
-    }
+    }}
     // add option to post without image 
    // Build query based on input
    if (!empty($postText) && !empty($postImage)) {
