@@ -14,17 +14,17 @@
         <div class="nav-left">
             <h2 class="logo"><a href="#">Priv<span>Connect</span></a></h2>
             <ul>
-                <li id="noti_icon" class="icons-nav"><img src="icons/notification.png" alt="notification"></li>
-                <li class="icons-nav"><img src="icons/inbox.png" alt="inbox"></li>
+                <li id="noti_icon" class="icons-nav"><img src="../icons/notification.png" alt="notification"></li>
+                <li class="icons-nav"><img src="../icons/inbox.png" alt="inbox"></li>
             </ul>
         </div>
         <div class="nav-right">
             <div class="search-box">
-                <img src="icons/search.png" alt="search">
+                <img src="../icons/search.png" alt="search">
                 <input type="text" placeholder="Search">
             </div>
             <div class="nav-user-icon online">
-                <img src="icons/profile-pic.png" alt="profile-pic">
+                <img src="../icons/profile-pic.png" alt="profile-pic">
     </nav>
 
     <div class="container">
@@ -34,15 +34,15 @@
                 <h4>Notifications</h4>
                 <ul class="notification-list">
                     <li>
-                        <img src="icons/notification.png" alt="Notification Icon">
+                        <img src="../icons/notification.png" alt="Notification Icon">
                         <p><strong>Rachel</strong> liked your post.</p>
                     </li>
                     <li>
-                        <img src="icons/notification.png" alt="Notification Icon">
+                        <img src="../icons/notification.png" alt="Notification Icon">
                         <p><strong>Derek</strong> commented on your photo.</p>
                     </li>
                     <li>
-                        <img src="icons/notification.png" alt="Notification Icon">
+                        <img src="../icons/notification.png" alt="Notification Icon">
                         <p><strong>Maria</strong> shared your post.</p>
                     </li>
                 </ul>
@@ -56,19 +56,19 @@
 
             <div class="online-list">
                 <div class="online">
-                    <img src="icons/member-2.png" alt="">
+                    <img src="../icons/member-2.png" alt="">
                 </div>
                 <p>Roy Clark</p>
             </div>
             <div class="online-list">
                 <div class="online">
-                    <img src="icons/member-2.png" alt="">
+                    <img src="../icons/member-2.png" alt="">
                 </div>
                 <p>Roy Clark</p>
             </div>
             <div class="online-list">
                 <div class="online">
-                    <img src="icons/member-2.png" alt="">
+                    <img src="../icons/member-2.png" alt="">
                 </div>
                 <p>Roy Clark</p>
             </div>
@@ -88,7 +88,7 @@
 
             <div class="write-post-container">
                 <div class="user-profile">
-                    <img src="icons/profile-pic.png" alt="">
+                    <img src="../icons/profile-pic.png" alt="">
                     <div>
                         <p>John singh</p>
                         <small>
@@ -100,9 +100,9 @@
                 <div class="post-input-conatiner">
                     <textarea rows="3" placeholder="What's you mind, Jhon?"></textarea>
                     <div class="add-post-links">
-                        <!-- <a href="#"><img src="icons/live-video.png" alt="">Live Video</a> -->
-                        <a href="#"><img src="icons/photo.png" alt="">Phot/Video</a>
-                        <a href="#"><img src="icons/feeling.png" alt="">Feeling/Activity</a>
+                        <!-- <a href="#"><img src="../icons/live-video.png" alt="">Live Video</a> -->
+                        <a href="#"><img src="../icons/photo.png" alt="">Phot/Video</a>
+                        <a href="#"><img src="../icons/feeling.png" alt="">Feeling/Activity</a>
                         <button type="button" class="post-btn">Post</button>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
             <div class="post-container">
                 <div class="post-row">
                     <div class="user-profile">
-                        <img src="icons/profile-pic.png" alt="">
+                        <img src="../icons/profile-pic.png" alt="">
                         <div>
                             <p>John singh</p>
                             <span>
@@ -123,18 +123,18 @@
                 </div>
 
                 <p class="post-text">Happy Birthday Ella <br><a href="#">#birthday-special</a></p>
-                <img src="icons/member-1.jpg" alt="" class="post-img">
+                <img src="../icons/member-1.jpg" alt="" class="post-img">
 
                 <div class="post-row">
                     <div class="activity-icons">
                         <div>
-                            <img src="icons/like.png" alt="">897K
+                            <img src="../icons/like.png" alt="">897K
                         </div>
                         <div>
-                            <img src="icons/comments.png" alt="">458K
+                            <img src="../icons/comments.png" alt="">458K
                         </div>
                         <div>
-                            <img src="icons/share.png" alt="">243k
+                            <img src="../icons/share.png" alt="">243k
                         </div>
                     </div>
                     <div class="post-profile-icon">
@@ -145,7 +145,7 @@
             <div class="post-container">
                 <div class="post-row">
                     <div class="user-profile">
-                        <img src="icons/profile-pic.png" alt="">
+                        <img src="../icons/profile-pic.png" alt="">
                         <div>
                             <p>John singh</p>
                             <span>
@@ -157,18 +157,18 @@
                 </div>
 
                 <p class="post-text">Happy Birthday Ella <br><a href="#">#birthday-special</a></p>
-                <img src="icons/member-1.jpg" alt="" class="post-img">
+                <img src="../icons/member-1.jpg" alt="" class="post-img">
 
                 <div class="post-row">
                     <div class="activity-icons">
                         <div>
-                            <img src="icons/like.png" alt="">897K
+                            <img src="../icons/like.png" alt="">897K
                         </div>
                         <div>
-                            <img src="icons/comments.png" alt="">458K
+                            <img src="../icons/comments.png" alt="">458K
                         </div>
                         <div>
-                            <img src="icons/share.png" alt="">243k
+                            <img src="../icons/share.png" alt="">243k
                         </div>
                     </div>
                     <div class="post-profile-icon">
@@ -179,7 +179,7 @@
           <div class="post-container">
                 <div class="post-row">
                     <div class="user-profile">
-                        <img src="icons/profile-pic.png" alt="">
+                        <img src="../icons/profile-pic.png" alt="">
                         <div>
                             <p>John singh</p>
                             <span>
@@ -191,18 +191,18 @@
                 </div>
 
                 <p class="post-text">Happy Birthday Ella <br><a href="#">#birthday-special</a></p>
-                <img src="icons/member-1.jpg" alt="" class="post-img">
+                <img src="../icons/member-1.jpg" alt="" class="post-img">
 
                 <div class="post-row">
                     <div class="activity-icons">
                         <div>
-                            <img src="icons/like.png" alt="">897K
+                            <img src="../icons/like.png" alt="">897K
                         </div>
                         <div>
-                            <img src="icons/comments.png" alt="">458K
+                            <img src="../icons/comments.png" alt="">458K
                         </div>
                         <div>
-                            <img src="icons/share.png" alt="">243k
+                            <img src="../icons/share.png" alt="">243k
                         </div>
                     </div>
                     <div class="post-profile-icon">
@@ -227,19 +227,19 @@
             </div>
             <div class="online-list">
                 <div class="online">
-                    <img src="icons/member-2.png" alt="">
+                    <img src="../icons/member-2.png" alt="">
                 </div>
                 <p>Roy Clark</p>
             </div>
             <div class="online-list">
                 <div class="online">
-                    <img src="icons/member-3.png" alt="">
+                    <img src="../icons/member-3.png" alt="">
                 </div>
                 <p>Sieena Watson</p>
             </div>
             <div class="online-list">
                 <div class="online">
-                    <img src="icons/member-4.png" alt="">
+                    <img src="../icons/member-4.png" alt="">
                 </div>
                 <p>Ben Taylor</p>
             </div>
