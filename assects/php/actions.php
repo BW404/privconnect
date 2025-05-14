@@ -50,7 +50,8 @@ if (isset($_GET['login'])) {
 
 if (isset($_GET['updateprofile'])) {
 
-$response = validateUpdateForm($_POST,$_FILES);
+$response = validateUpdateForm($_POST,$_FILES['profile_picture']);
+
 }
 
 
