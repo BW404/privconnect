@@ -164,7 +164,9 @@ if (isset($conn)) {
         </div>
     </section>
 
-    
+    <?php
+unset($_SESSION['error']);
+?>
 
 </body>
 </html>
