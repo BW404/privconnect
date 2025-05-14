@@ -115,3 +115,19 @@ sendMessageBtn.addEventListener("click", () => {
         });
     }
 });
+
+
+
+const userList = document.getElementById("user-list");
+const chatUserName = document.getElementById("chat-user-name");
+
+userList.addEventListener("click", (event) => {
+    const userElement = event.target.closest(".user");
+    if (userElement) {
+        const userId = parseInt(userElement.dataset.id);
+        const userName = userElement.dataset.name;
+        receiverId = userId;
+        chatUserName.textContent = userName;
+        fetchMessages(); // Load the chat history
+    }
+});
