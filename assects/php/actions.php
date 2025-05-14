@@ -58,8 +58,8 @@ if (isset($_GET['updateprofile'])) {
     echo "<pre>";
     print_r($response);
     echo "</pre>";
-    print_r($_POST);
-    print_r($_FILES);
+    // print_r($_POST);
+    // print_r($_FILES);
 
 
 }
