@@ -1,3 +1,6 @@
+<?php
+require_once '../php/functions.php';
+
 $loggedInUserId = $_SESSION['user_id'];
 
 // Fetch messages
