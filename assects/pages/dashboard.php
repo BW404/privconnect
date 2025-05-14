@@ -92,7 +92,7 @@ include '../php/header.php';?>
 
             <?php 
             // Fetch posts from the database
-//             $posts=getPosts();
+            $posts=getPosts();
 //             echo "<pre>";
 // print_r(getPosts());
 // echo "</pre>";
