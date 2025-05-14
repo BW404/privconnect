@@ -213,8 +213,8 @@ function validateUpdateForm($form_data,$file_data) {
     // } elseif (!preg_match("/^[a-zA-Z0-9]*$/", $form_data['username'])) {
     //     $response['msg'] = "Only letters and numbers allowed in username.";
     //     $response['status'] = false;
-    //     $response['field'] = "username";
-    }
+        // $response['field'] = "username";
+    // }
 
     // // Validate email
     // if (empty($form_data['email'])) {
