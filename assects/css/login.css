@@ -385,3 +385,9 @@ input[type="checkbox"] {
     display: none;
   }
 }
+.footer{
+  text-align: center;
+  color: #ffffff;
+  padding: 10px 0px 20px;
+  font-size: 13px;
+}
