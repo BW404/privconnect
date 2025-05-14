@@ -1,5 +1,6 @@
 <?php
 require_once 'functions.php';
+session_start();
 // for signup
 if(isset($_GET['signup'])) {
     $response=validateSignupForm($_POST);
