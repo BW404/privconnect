@@ -67,7 +67,7 @@ include '../php/header.php';?>
                 <div class="user-profile">
                     <img src="../photos/profile/<?=$user['profile_pic']?>" alt="">
                     <div>
-                        <p>John singh</p>
+                        <p><?=$user['first_name']?></p>
                         <small>
                             Public
                             <i class="fas fa-caret-down"></i>
