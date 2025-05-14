@@ -2,11 +2,11 @@
 include_once '../php/functions.php';
 
 
-// if(isset($_SESSION['Auth']) && $_SESSION['Auth'] == true) {
-//     // User is already logged in, redirect to dashboard
-//     header('Location: assects\pages\dashboard.php');
-//     exit;
-// }
+if(!isset($_SESSION['Auth']) && $_SESSION['Auth'] == true) {
+    // User is already logged in, redirect to dashboard
+    header('Location: ../../index.php');
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
