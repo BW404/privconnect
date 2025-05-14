@@ -50,7 +50,7 @@ if (isset($_GET['login'])) {
 
 if (isset($_GET['updateprofile'])) {
 
-    response = validateUpdateForm($_POST, $profile_picture);
+    $response = validateUpdateForm($_POST, $profile_picture);
     if (is_array($response) && isset($response['status']) && $response['status']) {
         if (updateProfile($_POST, $profile_picture)) {
             $_SESSION['success'] = "Profile updated successfully.";
