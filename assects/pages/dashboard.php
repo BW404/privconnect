@@ -88,7 +88,7 @@ include '../php/header.php';?>
             </div>
             <?php 
             // Fetch posts from the database
-            getPosts()
+            getPosts();
             foreach($posts as $post) {
                 // Display each post
                 echo '<div class="post-container">';
