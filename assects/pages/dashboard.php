@@ -86,7 +86,10 @@ include '../php/header.php';?>
                 </div>
                 </form>
             </div>
-
+            <?php 
+            // Fetch posts from the database
+            
+            ?>
             <div class="post-container">
                 <div class="post-row">
                     <div class="user-profile">
