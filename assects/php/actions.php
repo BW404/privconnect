@@ -50,6 +50,7 @@ if (isset($_GET['login'])) {
 
 if (isset($_GET['updateprofile'])) {
     print_r($_POST);
+    print_r($_FILES);
 
 
     // $response = validateProfileForm($_POST);
