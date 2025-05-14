@@ -134,6 +134,7 @@ echo "</pre>";
                 echo '<img src="./Socialbook_img/profile-pic.png" alt=""><i class="fas fa-caret-down"></i>';
                 echo '</div>';
                 echo '</div>';
+                echo '</div>';
             }
             ?>
 
