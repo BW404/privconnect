@@ -48,19 +48,20 @@ if (isset($conn)) {
                                                     <input type="text" name="username" class="form-style" placeholder="Username" autocomplete="off">
                                                     <i class="input-icon material-icons">alternate_email</i>
                                                 </div>
-                                                <!-- show error -->
-                                                <?php
-                                                    if(isset($_SESSION['error'])){
-                                                    $error = $_SESSION['error'];
-                                                    if($error['field'] == "username"){
-                                                        echo '<p class="error-message">'.$error['msg'].'</p>';
-                                                    }
-                                                }
-                                                    ?>
+
                                                 <div class="form-group">
                                                     <input type="password" name="password" class="form-style" placeholder="Password" autocomplete="off">
                                                     <i class="input-icon material-icons">lock</i>
                                                 </div>
+                                                                                                <!-- show error -->
+                                                                                                <?php
+                                                    if(isset($_SESSION['error'])){
+                                                    $error = $_SESSION['error'];
+                                                    if($error['field'] == "invalid"){
+                                                        echo '<p class="error-message">'.$error['msg'].'</p>';
+                                                    }
+                                                }
+                                                    ?>
                                                 <button type="submit" name="login" class="btn">Submit</button>
                                             </form>
                                         </div>
