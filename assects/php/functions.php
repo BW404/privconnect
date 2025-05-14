@@ -313,26 +313,13 @@ function updateUser($form_data,$file_data) {
 
 // add post
 function validatePost($form_data,$file_data) {
-    $response = array('status'=> true);
-    
-    // Validate post text
-    if (empty($form_data['post_text'])) {
-        $response['msg'] = "Post text is required.";
-        $response['status'] = false;
-        $response['field'] = "post_text";
-    }
-    // Validate post image
-    if (empty($file_data['post_image']['name'])) {
-        $response['msg'] = "No image selected.";
-        $response['status'] = false;
-        $response['field'] = "post_image";
-    } elseif ($file_data['post_image']['size'] > 5000000) {
-        $response['msg'] = "Post image size is too large.";
-        $response['status'] = false;
-        $response['field'] = "post_image";
+
+    // cheek if post text is empty or image is empty
+    if (empty($form_data['post_text']) && empty($file_data['post_image']['name'])) {
+        return false;
     }
 
-    return $response;
+    return true;
 
 }
 
