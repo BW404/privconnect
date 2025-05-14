@@ -1,4 +1,6 @@
-<?php global $user;?>
+<?php global $user;
+echo $user;
+?>
 
 <nav>        
         <div class="nav-left">
