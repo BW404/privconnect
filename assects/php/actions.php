@@ -40,7 +40,7 @@ if(isset($_GET['login'])) {
         else{
             $_SESSION['error'] = "Error logging in.";
             $_SESSION['error'] = "Invalid username or password.";
-            $_SESSION[]
+            $_SESSION['field'] = "invalid";
             header("Location: ../pages/login.php?login");
             exit();
         }
