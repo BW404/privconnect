@@ -87,6 +87,54 @@ include '../php/header.php';?>
                 </form>
             </div>
 
+
+
+
+            <?php 
+            // Fetch posts from the database
+            $posts=getPosts();
+            echo "<pre>";
+print_r(getPosts());
+echo "</pre>";
+            foreach($posts as $post) {
+                // Display each post
+                echo '<div class="post-container">';
+                echo '<div class="post-row">';
+                echo '<div class="user-profile">';
+                echo '<img src="../photos/profile/'.$post['profile_pic'].'" alt="">';
+                echo '<div>';
+                echo '<p>'.$post['first_name'].' '.$post['last_name'].'</p>';
+                echo '<span>'.$post['created_at'].'</span>';
+                echo '</div>';
+                echo '</div>';
+                echo '<a href="#"> <i class="fas fa-ellipsis-v"></i></a>';
+                echo '</div>';
+
+                
+                if($post['post_img']) {
+                    echo '<img src="../photos/posts/'.$post['post_img'].'" alt="" class="post-img">';
+                }
+                
+                echo '<div class="post-row">';
+                echo '<div class="activity-icons">';
+                // echo '<div><img src="../icons/like.png" alt="">'.$post['likes'].'</div>';
+                // echo '<div><img src="../icons/comments.png" alt="">'.$post['comments'].'</div>';
+                // echo '<div><img src="../icons/share.png" alt="">'.$post['shares'].'</div>';
+                echo '</div>';
+                echo '<div class="post-profile-icon">';
+                echo '<img src="./Socialbook_img/profile-pic.png" alt=""><i class="fas fa-caret-down"></i>';
+                echo '</div>';
+                echo '</div>';
+            }
+            ?>
+
+
+
+
+
+
+
+
             <div class="post-container">
                 <div class="post-row">
                     <div class="user-profile">
