@@ -153,8 +153,9 @@ include '../php/header.php';?>
                     <h4>
                         Conversation
                     </h4>
+                    <div class="chat-container">
     <div class="chat-header">
-        <h4>Chat with <span id="chat-user-name">User</span></h4>
+        <h4>Chat with <span id="chat-user-name">Select a user</span></h4>
     </div>
     <div class="chat-messages" id="chat-messages">
         <!-- Messages will be dynamically loaded here -->
@@ -163,6 +164,7 @@ include '../php/header.php';?>
         <textarea id="chat-message-input" placeholder="Type a message..."></textarea>
         <button id="send-message-btn">Send</button>
     </div>
+</div>
 
 
 
