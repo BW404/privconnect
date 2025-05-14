@@ -80,7 +80,7 @@ include '../php/header.php';?>
                     <a href="#" onclick="document.getElementById('fileInput').click();">
                     <img src="../icons/photo.png" alt="">Photo/Video
                     </a>
-                    <input type="file" id="fileInput" style="display: none;" accept="image/*,video/*">
+                    <input type="file" id="fileInput" name="post_image" style="display: none;" accept="image/*">
                         <button type="button" class="post-btn">Post</button>
                     </div>
                 </div>
