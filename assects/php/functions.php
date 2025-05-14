@@ -134,7 +134,7 @@ function validateLoginForm($form_data) {
 
 }
 
-<?php
+
 function checkUser($form_data) {
     global $conn;
 
