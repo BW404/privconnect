@@ -52,7 +52,7 @@ if (isset($_GET['updateprofile'])) {
 
 $response = validateUpdateForm($_POST,$_FILES['profile_picture']);
 if ($response['status']){
-    if(updateprofile($_POST,$_FILES['profile_picture'])){
+    if(updateProfile($_POST,$_FILES['profile_picture'])){
         $_SESSION['success'] = "Profile updated successfully.";
         header("Location: ../pages/edit_profile.php");
         exit();
