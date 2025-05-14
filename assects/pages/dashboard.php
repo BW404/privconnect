@@ -65,7 +65,7 @@ include '../php/header.php';?>
 
             <div class="write-post-container">
                 <div class="user-profile">
-                    <img src="../icons/profile-pic.png" alt="">
+                    <img src="../photos/profile/<?=$user['profile_pic']?>" alt="">
                     <div>
                         <p>John singh</p>
                         <small>
