@@ -201,38 +201,47 @@ function checkUser($form_data) {
 
 // Function to validate update profile form
 
-function validateUpdateForm($form_data,$image_data) {
+function validateUpdateForm($form_data,$file_data) {
     $response = array('status'=> true);
-
     
-// function for updating profile
-function updateProfile($form_data,$image_data) {
-    global $conn;
-    if(!$form_data['password']){
-        $form_data['password'] = getUserPassword($form_data['id']);
+
+    // Validate username
+    if (empty($form_data['username'])) {
+        $response['msg'] = "Username is required.";
+        $response['status'] = false;
+        $response['field'] = "username";
+    } elseif (!preg_match("/^[a-zA-Z0-9]*$/", $form_data['username'])) {
+        $response['msg'] = "Only letters and numbers allowed in username.";
+        $response['status'] = false;
+        $response['field'] = "username";
     }
-    else{
-        $form_data['password'] = password_hash($form_data['password'], PASSWORD_BCRYPT);
+
+    // Validate email
+    if (empty($form_data['email'])) {
+        $response['msg'] = "Email is required.";
+        $response['status'] = false;
+        $response['field'] = "email";
+    } elseif (!filter_var($form_data['email'], FILTER_VALIDATE_EMAIL)) {
+        $response['msg'] = "Invalid email format.";
+        $response['status'] = false;
+        $response['field'] = "email";
     }
-    // Check if a new image is uploaded
-    if ($image_data['error'] == 0) {
-        // Define the target directory and file name
-        $target_dir = "../photos/profile/";
-        $target_file = $target_dir . basename($image_data["name"]);
-        
-        // Move the uploaded file to the target directory
-        if (move_uploaded_file($image_data["tmp_name"], $target_file)) {
-            // Update the profile picture path in the database
-            $form_data['profile_picture'] = basename($image_data["name"]);
-        } else {
-            return false; // Error moving the uploaded file
-        }
-    } else {
-        // No new image uploaded, keep the old one
-        $form_data['profile_picture'] = getUserProfilePicture($form_data['id']);
+
+    // Validate last name
+    if (empty($form_data['last_name'])) {
+        $response['msg'] = "Last name is required.";
+        $response['status'] = false;
+        $response['field'] = "last_name";
+    } elseif (!preg_match("/^[a-zA-Z ]*$/", $form_data['last_name'])) {
+        $response['msg'] = "Only letters and white space allowed in last name.";
+        $response['status'] = false;
+        $response['field'] = "last_name";
     }
-    $query = "UPDATE users SET first_name = '".$form_data['first_name']."', last_name = '".$form_data['last_name']."', email = '".$form_data['email']."', password = '".$form_data['password']."', profile_pic = '".$form_data['profile_picture']."' WHERE username = '".$form_data['username']."'";
-    $run = mysqli_query($conn, $query);
-    return $run;
-}
-}
+                
+
+    // Validate first name
+    if (empty($form_data['first_name'])) {
+        $response['msg'] = "First name is required.";
+        $response['status'] = false;
+        $response['field'] = "first_name";
+    }
