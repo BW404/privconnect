@@ -1,5 +1,5 @@
 <?php
-include_once '../php/functions.php';
+include_once '../php/actions.php';
 include '../php/header.php';?>
 <body>
     <?php include '../php/nav.php';?>
