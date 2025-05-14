@@ -360,7 +360,7 @@ function createPost($text, $image) {
 
 
     global $conn;
-    $query = "INSERT INTO posts (user_id, post_text, post_img) VALUES ('".$_SESSION['userdata']['id']."', '".$text."', '".$image['post_image']['name']."')";
+    $query = "INSERT INTO posts (user_id, post_text, post_img) VALUES ('".$_SESSION['userdata']['id']."', '".$text."', '".$post_image."')";
     $run = mysqli_query($conn, $query);
     return $run;
 }
