@@ -78,10 +78,9 @@ include '../php/header.php';?>
                     <textarea rows="3" name="post_text" placeholder="What's you mind, Jhon?"></textarea>
                     <div class="add-post-links">
                     <a href="#" onclick="document.getElementById('fileInput').click();">
-    <img src="../icons/photo.png" alt="">Photo/Video
-</a>
-<input type="file" id="fileInput" style="display: none;" accept="image/*,video/*">
-                        <!-- <a href="#"><img src="../icons/feeling.png" alt="">Feeling/Activity</a> -->
+                    <img src="../icons/photo.png" alt="">Photo/Video
+                    </a>
+                    <input type="file" id="fileInput" style="display: none;" accept="image/*,video/*">
                         <button type="button" class="post-btn">Post</button>
                     </div>
                 </div>
