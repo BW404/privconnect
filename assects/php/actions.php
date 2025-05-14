@@ -55,21 +55,22 @@ if (isset($_GET['updateprofile'])) {
     // update data to the database if profile picture is not updated then keeep the old one and of teh password is not updated then keep the old one. do not validate the fprm 
     // if the form is not valid then return the error
     $response = validateUpdateForm($_POST,$_FILES);
-    if ($response['status'] == false) {
-        $_SESSION['error'] = $response;
-        header("Location: ../pages/edit_profile.php?updateprofile");
-        exit();
-    } else {
-        // update the data to the database
-        if (updateUser($_POST,$_FILES)) {
-            $_SESSION['success'] = "Profile updated successfully.";
-            header("Location: ../pages/edit_profile.php?updateprofile");
-            exit();
-        } else {
-            $_SESSION['error'] = "Error updating profile.";
-            header("Location: ../pages/edit_profile.php?updateprofile");
-            exit();
-        }
+    // if ($response['status'] == false) {
+    //     $_SESSION['error'] = $response;
+    //     header("Location: ../pages/edit_profile.php?updateprofile");
+    //     exit();
+    // } else {
+    //     // update the data to the database
+    //     if (updateUser($_POST,$_FILES)) {
+    //         $_SESSION['success'] = "Profile updated successfully.";
+    //         header("Location: ../pages/edit_profile.php?updateprofile");
+    //         exit();
+    //     } else {
+    //         $_SESSION['error'] = "Error updating profile.";
+    //         header("Location: ../pages/edit_profile.php?updateprofile");
+    //         exit();
+    //     }
+    if (updateUser($_POST,$_FILES))
     }
     // print_r($_POST);
     // print_r($_FILES);
