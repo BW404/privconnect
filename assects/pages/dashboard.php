@@ -31,7 +31,7 @@ include '../php/header.php';?>
                 </h4>
               </div>
 
-            <div class="online-list">
+            <!-- <div class="online-list">
                 <div class="online">
                     <img src="../icons/member-2.png" alt="">
                 </div>
@@ -48,8 +48,18 @@ include '../php/header.php';?>
                     <img src="../icons/member-2.png" alt="">
                 </div>
                 <p>Roy Clark</p>
-            </div>
-
+            </div> -->
+            <div class="online-list">
+    <?php
+    $users = getAllUsers(); // Fetch all users except the logged-in user
+    foreach ($users as $user) {
+        echo '<div class="online" onclick="startChat(' . $user['id'] . ', \'' . $user['first_name'] . '\')">';
+        echo '<img src="../photos/profile/' . $user['profile_pic'] . '" alt="">';
+        echo '<p>' . $user['first_name'] . ' ' . $user['last_name'] . '</p>';
+        echo '</div>';
+    }
+    ?>
+</div>
 
 
 
