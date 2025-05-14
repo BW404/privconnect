@@ -324,3 +324,7 @@ function validatePost($form_data,$file_data) {
 }
 
 
+
+// Function to add a post
+
+
