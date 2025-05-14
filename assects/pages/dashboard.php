@@ -130,14 +130,9 @@ include '../php/header.php';?>
             }
             ?>
 
-
-
-
-
-
           
-            
-            <button type="button" class="load-more-btn">Load More</button>
+<!--             
+            <button type="button" class="load-more-btn">Load More</button> -->
         </div>
        
         <div class="right-sidebar">
