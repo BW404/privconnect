@@ -28,7 +28,7 @@ document.addEventListener("click", (event) => {
 const chatMessages = document.getElementById("chat-messages");
 const chatMessageInput = document.getElementById("chat-message-input");
 const sendMessageBtn = document.getElementById("send-message-btn");
-const receiverId = 2; // Replace with dynamic receiver ID
+let receiverId = null;; // Replace with dynamic receiver ID
 
 // Fetch messages every 2 seconds
 setInterval(fetchMessages, 2000);
