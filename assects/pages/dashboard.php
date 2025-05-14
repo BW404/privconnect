@@ -29,7 +29,9 @@ include '../php/header.php';?>
                 <h4>
                     Following
                 </h4>
-                <div id="user-list">
+              </div>
+
+              <div id="user-list">
     <h3>Users</h3>
     <!-- User list will populate here -->
 </div>
@@ -40,7 +42,6 @@ include '../php/header.php';?>
     <input type="text" id="chat-message-input" placeholder="Type a message" style="width: 70%">
     <button id="send-message-btn">Send</button>
 </div>
-
 
 
 
