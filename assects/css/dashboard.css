@@ -597,15 +597,6 @@ nav{
     background: #dc143c;
 }
 
-.edit-profile-wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: #1b1b1b;
-}
-
 .edit-profile-container {
     max-width: 600px;
     margin: 50px auto;
