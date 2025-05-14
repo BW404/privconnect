@@ -50,21 +50,22 @@ if (isset($_GET['login'])) {
 
 if (isset($_GET['updateprofile'])) {
 
-    $profile_picture = isset($_FILES['profile_picture']) ? $_FILES['profile_picture'] : null;
-    $response = validateUpdateForm($_POST, $profile_picture);
-    if ($response['status']) {
+    response = validateUpdateForm($_POST, $profile_picture);
+    if (is_array($response) && isset($response['status']) && $response['status']) {
         if (updateProfile($_POST, $profile_picture)) {
-        $_SESSION['success'] = "Profile updated successfully.";
+            $_SESSION['success'] = "Profile updated successfully.";
+            header("Location: ../pages/edit_profile.php");
+            exit();
+        } else {
+            $_SESSION['error'] = "Error updating profile.";
+            header("Location: ../pages/edit_profile.php");
+            exit();
+        }
+    } else {
+        $_SESSION['error'] = "Invalid form data.";
         header("Location: ../pages/edit_profile.php");
         exit();
     }
-    else{
-        $_SESSION['error'] = "Error updating profile.";
-        header("Location: ../pages/edit_profile.php");
-        exit();
-    }
-
-}
 
 }
 
