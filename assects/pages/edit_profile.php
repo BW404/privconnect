@@ -25,6 +25,10 @@ include '../php/header.php'; ?>
             <h2>Edit Profile</h2>
             <form method="POST" action="../php/actions.php?updateprofile" class="edit-profile-form" enctype="multipart/form-data">
                 <div class="form-group">
+                    <div class="form-group">
+                        <label for="ussername">Username</label>
+                        <input type="text" id="username" name="username" class="form-style" value="<?=$user['username']?>" disabled>
+                    </div>
                     <label for="first_name">First Name</label>
                     <input type="text" id="first_name" name="first_name" class="form-style" value="<?=$user['first_name']?>">
                 </div>
@@ -35,10 +39,6 @@ include '../php/header.php'; ?>
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" class="form-style" value="<?=$user['email']?>">
-                </div>
-                <div class="form-group">
-                    <label for="ussername">Username</label>
-                    <input type="text" id="username" name="username" class="form-style" value="<?=$user['username']?>" disabled>
                 </div>
 
                 <div class="form-group">
