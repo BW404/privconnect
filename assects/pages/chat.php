@@ -1,25 +1,6 @@
 <?php
-require_once 'functions.php';
-
-// Send a message
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['send_message'])) {
-    $sender_id = $_SESSION['userdata']['id'];
-    $receiver_id = $_POST['receiver_id'];
-    $message = $_POST['message'];
-
-    $query = "INSERT INTO messages (sender_id, receiver_id, message) VALUES ('$sender_id', '$receiver_id', '$message')";
-    $run = mysqli_query($conn, $query);
-
-    if ($run) {
-        echo json_encode(['status' => 'success']);
-    } else {
-        echo json_encode(['status' => 'error', 'message' => 'Failed to send message.']);
-    }
-    exit();
-}
-
-// Fetch messages
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['fetch_messages'])) {
+    session_start();
     $sender_id = $_SESSION['userdata']['id'];
     $receiver_id = $_GET['receiver_id'];
 
@@ -28,9 +9,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['fetch_messages'])) {
               (sender_id = '$receiver_id' AND receiver_id = '$sender_id') 
               ORDER BY timestamp ASC";
     $run = mysqli_query($conn, $query);
-    $messages = mysqli_fetch_all($run, MYSQLI_ASSOC);
 
+    if (!$run) {
+        http_response_code(500);
+        echo json_encode(['error' => 'Database query failed']);
+        exit();
+    }
+
+    $messages = mysqli_fetch_all($run, MYSQLI_ASSOC);
+    header('Content-Type: application/json');
     echo json_encode($messages);
     exit();
 }
-?>
