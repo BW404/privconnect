@@ -134,41 +134,6 @@ echo "</pre>";
 
 
 
-
-            <div class="post-container">
-                <div class="post-row">
-                    <div class="user-profile">
-                        <img src="../icons/profile-pic.png" alt="">
-                        <div>
-                            <p>John singh</p>
-                            <span>
-                                November 12, 02:00A.M
-                            </span>
-                        </div>
-                    </div>
-                    <a href="#"> <i class="fas fa-ellipsis-v"></i></a>
-                </div>
-
-                <p class="post-text">Happy Birthday Ella <br><a href="#">#birthday-special</a></p>
-                <img src="../icons/member-1.jpg" alt="" class="post-img">
-
-                <div class="post-row">
-                    <div class="activity-icons">
-                        <div>
-                            <img src="../icons/like.png" alt="">897K
-                        </div>
-                        <div>
-                            <img src="../icons/comments.png" alt="">458K
-                        </div>
-                        <div>
-                            <img src="../icons/share.png" alt="">243k
-                        </div>
-                    </div>
-                    <div class="post-profile-icon">
-                        <img src="./Socialbook_img/profile-pic.png" alt=""><i class="fas fa-caret-down"></i>
-                    </div>
-                </div>
-            </div>
             <div class="post-container">
                 <div class="post-row">
                     <div class="user-profile">
