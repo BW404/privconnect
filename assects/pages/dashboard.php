@@ -31,12 +31,6 @@ include '../php/header.php';?>
                 </h4>
               </div>
 
-            <!-- <div class="online-list">
-                <div class="online">
-                    <img src="../icons/member-2.png" alt="">
-                </div>
-                <p>Roy Clark</p>
-            </div>
             <div class="online-list">
                 <div class="online">
                     <img src="../icons/member-2.png" alt="">
@@ -48,18 +42,14 @@ include '../php/header.php';?>
                     <img src="../icons/member-2.png" alt="">
                 </div>
                 <p>Roy Clark</p>
-            </div> -->
+            </div>
             <div class="online-list">
-    <?php
-    $users = getAllUsers(); // Fetch all users except the logged-in user
-    foreach ($users as $user) {
-        echo '<div class="online" onclick="startChat(' . $user['id'] . ', \'' . $user['first_name'] . ' ' . $user['last_name'] . '\')">';
-        echo '<img src="../photos/profile/' . $user['profile_pic'] . '" alt="">';
-        echo '<p>' . $user['first_name'] . ' ' . $user['last_name'] . '</p>';
-        echo '</div>';
-    }
-    ?>
-</div>
+                <div class="online">
+                    <img src="../icons/member-2.png" alt="">
+                </div>
+                <p>Roy Clark</p>
+            </div>
+
 
 
 
@@ -85,7 +75,7 @@ include '../php/header.php';?>
                 </div>
                 <form method="post" action="../php/actions.php?addpost" enctype="multipart/form-data">
                 <div class="post-input-conatiner">
-                    <textarea rows="3" name="post_text" placeholder="What's you mind,"></textarea>
+                    <textarea rows="3" name="post_text" placeholder="What's you mind,<?=$user['last_name']?>"></textarea>
                     <div class="add-post-links">
                     <a href="#" onclick="document.getElementById('fileInput').click();">
                     <img src="../icons/photo.png" alt="">Photo/Video
@@ -153,9 +143,8 @@ include '../php/header.php';?>
                     <h4>
                         Conversation
                     </h4>
-                    <div class="chat-container">
     <div class="chat-header">
-        <h4>Chat with <span id="chat-user-name">Select a user</span></h4>
+        <h4>Chat with <span id="chat-user-name">User</span></h4>
     </div>
     <div class="chat-messages" id="chat-messages">
         <!-- Messages will be dynamically loaded here -->
@@ -164,7 +153,6 @@ include '../php/header.php';?>
         <textarea id="chat-message-input" placeholder="Type a message..."></textarea>
         <button id="send-message-btn">Send</button>
     </div>
-</div>
 
 
 
