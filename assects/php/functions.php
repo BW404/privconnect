@@ -321,7 +321,19 @@ function validatePost($form_data,$file_data) {
         $response['status'] = false;
         $response['field'] = "post_text";
     }
+    // Validate post image
+    if (empty($file_data['post_image']['name'])) {
+        $response['msg'] = "Post image is required.";
+        $response['status'] = false;
+        $response['field'] = "post_image";
+    } elseif ($file_data['post_image']['size'] > 5000000) {
+        $response['msg'] = "Post image size is too large.";
+        $response['status'] = false;
+        $response['field'] = "post_image";
+    }
 
     return $response;
 
 }
+
+
