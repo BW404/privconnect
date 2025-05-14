@@ -746,6 +746,55 @@ nav{
 
 
 
+#user-list, #chat-container {
+    float: left;
+    width: 45%;
+    margin: 10px;
+}
+
+.user {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.user.active {
+    background-color: #ddd;
+}
+
+#chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.message {
+    margin: 5px 0;
+}
+
+.sent {
+    text-align: right;
+    color: blue;
+}
+
+.received {
+    text-align: left;
+    color: green;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ///......media query....../// */
 
