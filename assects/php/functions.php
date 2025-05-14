@@ -326,25 +326,28 @@ function validatePost($form_data,$file_data) {
 
 
 // Function to add a post
-function createPost($text, $image){
+function createPost($text, $image) {
     $text = $text['post_text']; 
-    // Check if a new profile picture is uploaded
     if (!empty($image['name'])) {
         $target_dir = "../photos/posts/";
-        $target_file = $target_dir . basename($image['post_image']['name']);
+        $target_file = $target_dir . basename($image['name']);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-            // Upload the file
+        // Upload the file
         if (move_uploaded_file($image['tmp_name'], $target_file)) {
-            // Update the profile picture in the database
             global $conn;
-            $query = "UPDATE users SET profile_pic = '".$image['post_image']['name']."' WHERE id = '".$_SESSION['userdata']['id']."'";
-            mysqli_query($conn, $query);
+            $query = "INSERT INTO posts (user_id, post_text, post_img) VALUES ('" . $_SESSION['userdata']['id'] . "', '" . $text . "', '" . $image['name'] . "')";
+            $run = mysqli_query($conn, $query);
+            return $run;
         } else {
             echo "Sorry, there was an error uploading your file.";
             return false;
         }
+    } else {
+        echo "No image uploaded.";
+        return false;
     }
+
     global $conn;
     $query = "INSERT INTO posts (user_id, post_text, post_img) VALUES ('".$_SESSION['userdata']['id']."', '".$text."', '".$image['post_image']['name']."')";
     $run = mysqli_query($conn, $query);
