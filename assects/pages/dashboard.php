@@ -49,12 +49,14 @@ include '../php/header.php';?>
                 </div>
                 <p>Roy Clark</p>
             </div> -->
-            <div id="user-list">
-    <!-- Dynamically filled by JavaScript or server-side -->
-    <div class="user" data-id="2" data-name="John Doe">John Doe</div>
-    <div class="user" data-id="3" data-name="Jane Smith">Jane Smith</div>
-</div>
-
+            <?php
+// Assuming you're already connected to the DB and logged in
+$loggedInUserId = $_SESSION['user_id'];
+$result = $conn->query("SELECT id, name FROM users WHERE id != $loggedInUserId");
+while ($row = $result->fetch_assoc()) {
+    echo '<div class="user" data-id="' . $row['id'] . '" data-name="' . htmlspecialchars($row['name']) . '">' . htmlspecialchars($row['name']) . '</div>';
+}
+?>
 
 
 
