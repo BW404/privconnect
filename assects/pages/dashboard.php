@@ -75,7 +75,7 @@ include '../php/header.php';?>
                 </div>
                 <form method="post" action="../php/actions.php?addpost" enctype="multipart/form-data">
                 <div class="post-input-conatiner">
-                    <textarea rows="3" name="post_text" placeholder="What's you mind,<?=$user['last_name']?>"></textarea>
+                    <textarea rows="3" name="post_text" placeholder="What's you mind, Jhon?"></textarea>
                     <div class="add-post-links">
                     <a href="#" onclick="document.getElementById('fileInput').click();">
                     <img src="../icons/photo.png" alt="">Photo/Video
