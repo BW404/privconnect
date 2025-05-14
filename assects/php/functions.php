@@ -259,9 +259,53 @@ function updateUser($form_data,$file_data) {
     print_r($file_data);
     print_r($_SESSION['userdata']);
     echo "</pre>";
-    return true;
-    // global $conn;
-    // $query = "UPDATE users SET first_name = '".$form_data['first_name']."', last_name = '".$form_data['last_name']."', email = '".$form_data['email']."' WHERE id = '".$_SESSION['userdata']['id']."'";
-    // $run = mysqli_query($conn, $query);
-    // return $run;
+    // Check if a new profile picture is uploaded
+    if (!empty($file_data['profile_picture']['name'])) {
+        $target_dir = "../photos/profile/";
+        $target_file = $target_dir . basename($file_data['profile_picture']['name']);
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+        // Check if the file is an image
+        $check = getimagesize($file_data['profile_picture']['tmp_name']);
+        if ($check === false) {
+            echo "File is not an image.";
+            return false;
+        }
+
+        // Check file size (5MB limit)
+        if ($file_data['profile_picture']['size'] > 5000000) {
+            echo "Sorry, your file is too large.";
+            return false;
+        }
+
+        // Allow certain file formats
+        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+            echo "Sorry, only JPG, JPEG, PNG files are allowed.";
+            return false;
+        }
+
+        // Upload the file
+        if (move_uploaded_file($file_data['profile_picture']['tmp_name'], $target_file)) {
+            // Update the profile picture in the database
+            global $conn;
+            $query = "UPDATE users SET profile_pic = '".$file_data['profile_picture']['name']."' WHERE id = '".$_SESSION['userdata']['id']."'";
+            mysqli_query($conn, $query);
+        } else {
+            echo "Sorry, there was an error uploading your file.";
+            return false;
+        }
+    }
+    // Check if a new password is provided
+    if (!empty($form_data['password'])) {
+        $hashed_password = password_hash($form_data['password'], PASSWORD_BCRYPT);
+        // Update the password in the database
+        global $conn;
+        $query = "UPDATE users SET password = '".$hashed_password."' WHERE id = '".$_SESSION['userdata']['id']."'";
+        mysqli_query($conn, $query);
+    }
+    // Update other user information
+    global $conn;
+    $query = "UPDATE users SET first_name = '".$form_data['first_name']."', last_name = '".$form_data['last_name']."', email = '".$form_data['email']."' WHERE id = '".$_SESSION['userdata']['id']."'";
+    $run = mysqli_query($conn, $query);
+    return $run;
 }
