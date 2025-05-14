@@ -69,3 +69,10 @@ sendMessageBtn.addEventListener("click", () => {
         });
     }
 });
+
+
+function startChat(userId, userName) {
+    receiverId = userId;
+    document.getElementById("chat-user-name").textContent = userName;
+    fetchMessages();
+}
