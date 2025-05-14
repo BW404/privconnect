@@ -137,7 +137,7 @@ function validateLoginForm($form_data) {
         $response['field'] = "checkuser";
     }
     else{
-        $response['user'] = checkUser($form_data)['user'];
+        $response['user'] = checkUser($form_data);
     }
 
 
