@@ -37,7 +37,11 @@ if (isset($_GET['login'])) {
         exit();
     } else {
         if (loginUser($_POST)) {
-            $_SESSION['A'] = "Login successful.";
+            $_SESSION['Auth'] = true;
+            $_SESSION['userdata'] = $response['user'];
+            echo "<pre>";
+            print_r($_SESSION['userdata']);
+            echo "</pre>";
             header("Location: ../pages/dashboard.php");
             exit();
         } 
