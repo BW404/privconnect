@@ -258,6 +258,7 @@ function updateUser($form_data,$file_data) {
     print_r($form_data);
     print_r($file_data);
     echo "</pre>";
+    return true;
     // global $conn;
     // $query = "UPDATE users SET first_name = '".$form_data['first_name']."', last_name = '".$form_data['last_name']."', email = '".$form_data['email']."' WHERE id = '".$_SESSION['userdata']['id']."'";
     // $run = mysqli_query($conn, $query);
