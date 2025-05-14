@@ -1,5 +1,6 @@
-<nav>
-        
+<?php global $user;?>
+
+<nav>        
         <div class="nav-left">
             <h2 class="logo"><a href="#">Priv<span>Connect</span></a></h2>
             <ul>
