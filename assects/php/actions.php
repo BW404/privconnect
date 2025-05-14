@@ -60,3 +60,9 @@ if (isset($_GET['updateprofile'])) {
 }
 
 
+
+
+// for managing add post
+if
+
+
