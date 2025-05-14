@@ -134,57 +134,52 @@ function validateLoginForm($form_data) {
 
 }
 
+<?php
 function checkUser($form_data) {
-    function checkUser($form_data) {
-        global $conn;
-    
-        // Use prepared statements to prevent SQL injection
-        $query = "SELECT * FROM users WHERE username = ?";
-        $run = mysqli_prepare($conn, $query);
-    
-        if ($run) {
-            mysqli_stmt_bind_param($run, "s", $form_data['username']);
-            mysqli_stmt_execute($run);
-            $data = mysqli_stmt_get_result($run);
-    
-            if ($data = mysqli_fetch_assoc($data)) {
-                // Verify the password
-                if (password_verify($form_data['password'], $row['password'])) {
-                    mysqli_stmt_close($run);
-                    // return true;
-                    // Fetch the user data
-                    
-                    $data = mysqli_fetch_assoc($data);
-                    // set status to true
-                    $data['status'] = true;
+    global $conn;
 
-                    
-                    return $data; // Return the user data
+    // Use prepared statements to prevent SQL injection
+    $query = "SELECT * FROM users WHERE username = ?";
+    $stmt = mysqli_prepare($conn, $query);
 
-                }
-            
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "s", $form_data['username']);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+
+        if ($row = mysqli_fetch_assoc($result)) {
+            // Verify the password
+            if (password_verify($form_data['password'], $row['password'])) {
+                // Set status to true and return user data
+                $row['status'] = true;
+                mysqli_stmt_close($stmt);
+                return $row;
+            } else {
                 // Password does not match
-                $response['msg'] = "Invalid password.";
-                $response['status'] = false;
-                $response['field'] = "password";
-                $response['data'] = $form_data;
+                $response = [
+                    'msg' => "Invalid password.",
+                    'status' => false,
+                    'field' => "password",
+                    'data' => $form_data
+                ];
+                mysqli_stmt_close($stmt);
                 return $response;
-
             }
-            // Username does not exist
-            $response['msg'] = "Username does not exist.";
-            $response['status'] = false;
-            $response['field'] = "username";
-            $response['data'] = $form_data;
-            return $response;
-        
-    
-            mysqli_stmt_close($run);
         } else {
-            // Log or handle the error
-            error_log("MySQL Error: " . mysqli_error($conn));
+            // Username does not exist
+            $response = [
+                'msg' => "Username does not exist.",
+                'status' => false,
+                'field' => "username",
+                'data' => $form_data
+            ];
+            mysqli_stmt_close($stmt);
+            return $response;
         }
-    
-        return false;
+    } else {
+        // Log or handle the error
+        error_log("MySQL Error: " . mysqli_error($conn));
     }
+
+    return false;
 }
