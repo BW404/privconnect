@@ -323,7 +323,7 @@ function validatePost($form_data,$file_data) {
     }
     // Validate post image
     if (empty($file_data['post_image']['name'])) {
-        $response['msg'] = "Post image is required.";
+        $response['msg'] = "No image selected.";
         $response['status'] = false;
         $response['field'] = "post_image";
     } elseif ($file_data['post_image']['size'] > 5000000) {
