@@ -25,28 +25,27 @@ if(isset($_GET['signup'])) {
 }
 
 // for login
-if(isset($_GET['login'])) {
-    $response=validateLoginForm($_POST);
-    if($response['status'] == false) {
+if (isset($_GET['login'])) {
+    $response = validateLoginForm($_POST);
+
+    if ($response['status'] == false) {
         $_SESSION['error'] = $response;
         header("Location: ../pages/login.php?login");
         exit();
-    }
-    else{
-        if(loginUser($_POST)){
+    } else {
+        if (loginUser($_POST)) {
             $_SESSION['success'] = "Login successful.";
             header("Location: ../pages/dashboard.php");
             exit();
-        }
-        else{
+        } else {
             // error for invalid username or password
-            $_SESSION['status'] = false;
-            $_SESSION['error'] = "Error logging in.";
-            $_SESSION['msg'] = "Invalid username or password.";
-            $_SESSION['field'] = "invalid";
+            $_SESSION['error'] = [
+                'msg' => "Invalid username or password.",
+                'status' => false,
+                'field' => "invalid"
+            ];
             header("Location: ../pages/login.php?login");
             exit();
         }
     }
-   
 }
