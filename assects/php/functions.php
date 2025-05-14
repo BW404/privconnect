@@ -208,7 +208,29 @@ function validateUpdateForm($form_data,$image_data) {
 // function for updating profile
 function updateProfile($form_data,$image_data) {
     global $conn;
-    if()
+    if(!form_data['password']){
+        $form_data['password'] = getUserPassword($form_data['id']);
+    }
+    else{
+        $form_data['password'] = password_hash($form_data['password'], PASSWORD_BCRYPT);
+    }
+    // Check if a new image is uploaded
+    if ($image_data['error'] == 0) {
+        // Define the target directory and file name
+        $target_dir = "../photos/profile/";
+        $target_file = $target_dir . basename($image_data["name"]);
+        
+        // Move the uploaded file to the target directory
+        if (move_uploaded_file($image_data["tmp_name"], $target_file)) {
+            // Update the profile picture path in the database
+            $form_data['profile_picture'] = basename($image_data["name"]);
+        } else {
+            return false; // Error moving the uploaded file
+        }
+    } else {
+        // No new image uploaded, keep the old one
+        $form_data['profile_picture'] = getUserProfilePicture($form_data['id']);
+    }
     $query = "UPDATE users SET first_name = '".$form_data['first_name']."', last_name = '".$form_data['last_name']."', email = '".$form_data['email'].", password = '".$form_data['password']."', profile_pic = '".$form_data['profile_picture']."' WHERE id = '".$form_data['id']."'";
     $run = mysqli_query($conn, $query);
     return $run;
