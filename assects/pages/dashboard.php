@@ -2,7 +2,7 @@
 include_once '../php/functions.php';
 include '../php/header.php';?>
 <body>
-    <?>php include '../php/navbar.php';?>
+    <?php include '../php/nav.php';?>
 
     <div class="container">
         <div class="left-sidebar">
