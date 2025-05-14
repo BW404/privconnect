@@ -3,7 +3,7 @@
 include('../php/config.php');
 
 // // Start session
-// session_start();
+session_start();
 
 // Close database connection
 if (isset($conn)) {
@@ -163,8 +163,6 @@ if (isset($conn)) {
             </div>
         </div>
     </section>
-    <?php
-    unset($_SESSION['error']);
-    ?>
+
 </body>
 </html>
