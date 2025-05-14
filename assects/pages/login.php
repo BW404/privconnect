@@ -53,8 +53,8 @@ if (isset($conn)) {
                                                     <input type="password" name="password" class="form-style" placeholder="Password" autocomplete="off">
                                                     <i class="input-icon material-icons">lock</i>
                                                 </div>
-                                                                                                <!-- show error -->
-                                                                                                <?php
+                                                    <!-- show error -->
+                                                    <?php
                                                     if(isset($_SESSION['error'])){
                                                     $error = $_SESSION['error'];
                                                     if($error['field'] == "invalid"){
