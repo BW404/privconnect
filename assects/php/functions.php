@@ -361,7 +361,7 @@ function createPost($text, $image) {
 // for getting post
 function getPosts() {
     global $conn;
-    $query = "SELECT * FROM posts ORDER BY created_at DESC";
+    $query = "SELECT posts.id, posts.post_text, posts.post_img, users.first_name, users.last_name, users.profile_pic FROM posts INNER JOIN users ON posts.user_id = users.id ORDER BY posts.created_at DESC";
     $run = mysqli_query($conn, $query);
     return $run;
 }
