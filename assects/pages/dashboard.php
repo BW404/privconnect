@@ -223,3 +223,5 @@ include '../php/header.php';?>
         </div>
     </div>
     <script src="activity.js"></script>
+
+    <?php include '../php/footer.php';?>
