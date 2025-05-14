@@ -49,8 +49,9 @@ if (isset($_GET['login'])) {
 
 
 if (isset($_GET['updateprofile'])) {
+    print_r($_POST);
 
-    
+
     // $response = validateProfileForm($_POST);
     // if ($response['status'] == false) {
     //     $_SESSION['error'] = $response;
