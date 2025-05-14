@@ -49,14 +49,17 @@ include '../php/header.php';?>
                 </div>
                 <p>Roy Clark</p>
             </div> -->
-            <?php
-// Assuming you're already connected to the DB and logged in
-$loggedInUserId = $_SESSION['user_id'];
-$result = $conn->query("SELECT id, name FROM users WHERE id != $loggedInUserId");
-while ($row = $result->fetch_assoc()) {
-    echo '<div class="user" data-id="' . $row['id'] . '" data-name="' . htmlspecialchars($row['name']) . '">' . htmlspecialchars($row['name']) . '</div>';
-}
-?>
+            <div class="online-list">
+    <?php
+    $users = getAllUsers(); // Fetch all users except the logged-in user
+    foreach ($users as $user) {
+        echo '<div class="online" onclick="startChat(' . $user['id'] . ', \'' . $user['first_name'] . ' ' . $user['last_name'] . '\')">';
+        echo '<img src="../photos/profile/' . $user['profile_pic'] . '" alt="">';
+        echo '<p>' . $user['first_name'] . ' ' . $user['last_name'] . '</p>';
+        echo '</div>';
+    }
+    ?>
+</div>
 
 
 
