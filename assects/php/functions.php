@@ -204,16 +204,6 @@ function checkUser($form_data) {
 function validateUpdateForm($form_data,$image_data) {
     $response = array('status'=> true);
     
-    // Validate password
-    if (empty($form_data['password'])) {
-        $response['msg'] = "Password is required.";
-        $response['status'] = false;
-        $response['field'] = "password";
-    } elseif (strlen($form_data['password']) < 8) {
-        $response['msg'] = "Password must be at least 8 characters long.";
-        $response['status'] = false;
-        $response['field'] = "password";
-    }
 
     // Validate username
     if (empty($form_data['username'])) {
@@ -224,17 +214,6 @@ function validateUpdateForm($form_data,$image_data) {
         $response['msg'] = "Only letters and numbers allowed in username.";
         $response['status'] = false;
         $response['field'] = "username";
-    }
-
-    // Validate email
-    if (empty($form_data['email'])) {
-        $response['msg'] = "Email is required.";
-        $response['status'] = false;
-        $response['field'] = "email";
-    } elseif (!filter_var($form_data['email'], FILTER_VALIDATE_EMAIL)) {
-        $response['msg'] = "Invalid email format.";
-        $response['status'] = false;
-        $response['field'] = "email";
     }
 
     // Validate last name
