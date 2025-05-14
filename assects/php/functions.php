@@ -341,11 +341,11 @@ function createPost($text, $image) {
             return $run;
         } else {
             echo "Sorry, there was an error uploading your file.";
-            return false;
+            // return false;
         }
     } else {
         echo "No image uploaded.";
-        return false;
+        // return false;
     }
 
     $post_image = $image['post_image']['name'];
