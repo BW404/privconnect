@@ -364,7 +364,7 @@ function createPost($text, $image){
         }
     }
     global $conn;
-    $query = "INSERT INTO posts (user_id, post_text, post_image) VALUES ('".$_SESSION['userdata']['id']."', '".$text."', '".$image[name]."')";
+    $query = "INSERT INTO posts (user_id, post_text, post_img) VALUES ('".$_SESSION['userdata']['id']."', '".$text."', '".$image[name]."')";
     $run = mysqli_query($conn, $query);
     return $run;
 }
