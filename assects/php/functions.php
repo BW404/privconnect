@@ -327,7 +327,10 @@ function validatePost($form_data,$file_data) {
 
 // Function to add a post
 function createPost($text, $image) {
-    $text = $text['post_text']; 
+    $text = $text['post_text'];
+    if (empty($text)) {
+        $text = " ";
+    } 
     if (!empty($image['post_image']['name'])) {
         $target_dir = "../photos/posts/";
         $target_file = $target_dir . basename($image['post_image']['name']);
