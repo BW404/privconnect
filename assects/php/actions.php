@@ -25,27 +25,23 @@ if(isset($_GET['signup'])) {
 
 // for login
 if(isset($_GET['login'])) {
-
-    print_r(checkUser($_POST));
-
-
-    // $response=validateLoginForm($_POST);
-    // if($response['status'] == false) {
-    //     $_SESSION['error'] = $response;
-    //     header("Location: ../pages/login.php?login");
-    //     exit();
-    // }
-    // else{
-    //     if(loginUser($_POST)){
-    //         $_SESSION['success'] = "Login successful.";
-    //         header("Location: ../pages/dashboard.php");
-    //         exit();
-    //     }
-    //     else{
-    //         $_SESSION['error'] = "Error logging in.";
-    //         header("Location: ../pages/login.php?login");
-    //         exit();
-    //     }
-    // }
+    $response=validateLoginForm($_POST);
+    if($response['status'] == false) {
+        $_SESSION['error'] = $response;
+        header("Location: ../pages/login.php?login");
+        exit();
+    }
+    else{
+        if(loginUser($_POST)){
+            $_SESSION['success'] = "Login successful.";
+            header("Location: ../pages/dashboard.php");
+            exit();
+        }
+        else{
+            $_SESSION['error'] = "Error logging in.";
+            header("Location: ../pages/login.php?login");
+            exit();
+        }
+    }
    
 }
