@@ -130,14 +130,16 @@ function validateLoginForm($form_data) {
         $response['field'] = "username";
     } 
 
-    // check if username is registered
+    // check user exists
     if (!checkUser($form_data)['status']) {
         $response['msg'] = "Incorrect username or password.";
         $response['status'] = false;
         $response['field'] = "checkuser";
     }
-    // check if password is correct
-    
+    else{
+        $response['user'] = checkUser($form_data)['user'];
+    }
+
 
 
 
