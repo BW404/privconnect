@@ -347,6 +347,7 @@ function createPost($text, $image) {
         echo "No image uploaded.";
         return false;
     }
+    
 
     global $conn;
     $query = "INSERT INTO posts (user_id, post_text, post_img) VALUES ('".$_SESSION['userdata']['id']."', '".$text."', '".$image['post_image']['name']."')";
