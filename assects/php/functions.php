@@ -132,9 +132,9 @@ function validateLoginForm($form_data) {
 
     // check if username is registered
     if (!checkUser($form_data)['status']) {
-        $response['msg'] = "Username is required.";
+        $response['msg'] = "Incorrect username or password.";
         $response['status'] = false;
-        $response['field'] = "username";
+        $response['field'] = "checkuser";
     } 
 
 
