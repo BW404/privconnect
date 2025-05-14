@@ -37,7 +37,7 @@ if (isset($_GET['login'])) {
         exit();
     } else {
         if (loginUser($_POST)) {
-            $_SESSION['success'] = "Login successful.";
+            $_SESSION['A'] = "Login successful.";
             header("Location: ../pages/dashboard.php");
             exit();
         } 
