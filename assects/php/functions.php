@@ -361,7 +361,7 @@ function createPost($text, $image) {
 // for getting post
 function getPosts() {
     global $conn;
-    $query = "SELECT posts.id, posts.user_id,posts.post_text, posts.post_img, users.first_name, users.last_name, users.profile_pic FROM posts JOIN users ON posts.user_id = users.id";
+    $query = "SELECT posts.id, posts.user_id,posts.post_text, posts.post_img, posts.created, users.first_name, users.last_name, users.profile_pic FROM posts JOIN users ON posts.user_id = users.id";
     $run = mysqli_query($conn, $query);
     return mysqli_fetch_all($run,true);
 }
