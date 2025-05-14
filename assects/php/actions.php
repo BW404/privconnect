@@ -48,26 +48,27 @@ if (isset($_GET['login'])) {
 }
 
 
-
 if (isset($_GET['updateprofile'])) {
-    // Initialize $profile_picture (example: from a file upload)
-    $profile_picture = isset($_FILES['profile_picture']) ? $_FILES['profile_picture'] : null;
+    print_r($_POST);
+    print_r($_FILES);
 
-    $response = validateUpdateForm($_POST, $profile_picture);
-    if (is_array($response) && isset($response['status']) && $response['status']) {
-        if (updateProfile($_POST, $profile_picture)) {
-            $_SESSION['success'] = "Profile updated successfully.";
-            header("Location: ../pages/edit_profile.php");
-            exit();
-        } else {
-            $_SESSION['error'] = "Error updating profile.";
-            header("Location: ../pages/edit_profile.php");
-            exit();
-        }
-    } else {
-        $_SESSION['error'] = "Invalid form data.";
-        header("Location: ../pages/edit_profile.php");
-        exit();
-    }
+
+    // $response = validateProfileForm($_POST);
+    // if ($response['status'] == false) {
+    //     $_SESSION['error'] = $response;
+    //     header("Location: ../pages/edit_profile.php?updateprofile");
+    //     exit();
+    // } else {
+    //     if (updateUserProfile($_POST)) {
+    //         $_SESSION['success'] = "Profile updated successfully.";
+    //         header("Location: ../pages/edit_profile.php?updateprofile");
+    //         exit();
+    //     } else {
+    //         $_SESSION['error'] = "Error updating profile.";
+    //         header("Location: ../pages/edit_profile.php?updateprofile");
+    //         exit();
+    //     }
+    // }
 }
+
 
