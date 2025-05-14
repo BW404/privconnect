@@ -23,7 +23,7 @@ include '../php/header.php'; ?>
         </div>
         <div class="edit-profile-container">
             <h2>Edit Profile</h2>
-            <form method="POST" action="../php/actions.php?updateprofile" class="edit-profile-form">
+            <form method="POST" action="../php/actions.php?updateprofile" class="edit-profile-form" enctype="multipart/form-data">
                 <div class="form-group">
                     <label for="first_name">First Name</label>
                     <input type="text" id="first_name" name="first_name" class="form-style" value="<?=$user['first_name']?>">
