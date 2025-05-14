@@ -48,7 +48,7 @@ if (isset($_GET['login'])) {
 }
 
 
-<?php
+
 if (isset($_GET['updateprofile'])) {
     // Initialize $profile_picture (example: from a file upload)
     $profile_picture = isset($_FILES['profile_picture']) ? $_FILES['profile_picture'] : null;
