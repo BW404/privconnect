@@ -64,24 +64,7 @@ if (isset($_GET['updateprofile'])) {
 
 // for managing add post
 if (isset($_GET['addpost'])) {
-    $response = validatePostForm($_POST,$_FILES);
-    if($response['status'] == false){
-        $_SESSION['error'] = $response;
-        header("Location: ../pages/dashboard.php?addpost");
-        exit();
-    }
-    else{
-        if(createPost($_POST,$_FILES)){
-            $_SESSION['success'] = "Post added successfully.";
-            header("Location: ../pages/dashboard.php?addpost");
-            exit();
-        }
-        else{
-            $_SESSION['error'] = "Error adding post.";
-            header("Location: ../pages/dashboard.php?addpost");
-            exit();
-        }
-    }
+    createPost($_POST,$_FILES);
 }
 
 
