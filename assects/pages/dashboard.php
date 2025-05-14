@@ -29,28 +29,17 @@ include '../php/header.php';?>
                 <h4>
                     Following
                 </h4>
-              </div>
+                <div id="user-list">
+    <h3>Users</h3>
+    <!-- User list will populate here -->
+</div>
 
-            <div class="online-list">
-                <div class="online">
-                    <img src="../icons/member-2.png" alt="">
-                </div>
-                <p>Roy Clark</p>
-            </div>
-            <div class="online-list">
-                <div class="online">
-                    <img src="../icons/member-2.png" alt="">
-                </div>
-                <p>Roy Clark</p>
-            </div>
-            <div class="online-list">
-                <div class="online">
-                    <img src="../icons/member-2.png" alt="">
-                </div>
-                <p>Roy Clark</p>
-            </div>
-
-
+<div id="chat-container">
+    <h3>Chat with: <span id="chat-user-name">None</span></h3>
+    <div id="chat-messages"></div>
+    <input type="text" id="chat-message-input" placeholder="Type a message" style="width: 70%">
+    <button id="send-message-btn">Send</button>
+</div>
 
 
 
