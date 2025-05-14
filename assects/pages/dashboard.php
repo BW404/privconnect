@@ -107,7 +107,7 @@ echo "</pre>";
                 echo '</div>';
 
                 
-                if($post['post_image']) {
+                if($post['post_img']) {
                     echo '<img src="../photos/posts/'.$post['image'].'" alt="" class="post-img">';
                 }
                 
