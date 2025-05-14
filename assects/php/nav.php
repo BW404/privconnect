@@ -14,7 +14,7 @@
                 <input type="text" placeholder="Search">
             </div>
             <div class="nav-user-icon online" id="user_icon">
-                <img src="../iamge/profile/<?=$user['profile_pic']?>" alt="profile-pic">
+                <img src="../photos/profile/<?=$user['profile_pic']?>" alt="profile-pic">
                 <div class="dropdown-menu" id="dropdown_menu">
                     <a href="../pages/edit_profile.php">Profile</a>
                     <a href="#">Settings</a>
