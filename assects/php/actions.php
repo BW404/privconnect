@@ -26,7 +26,8 @@ if(isset($_GET['signup'])) {
 // for login
 if(isset($_GET['login'])) {
 
-    
+    print_r(checkUser($_POST));
+
 
     // $response=validateLoginForm($_POST);
     // if($response['status'] == false) {
