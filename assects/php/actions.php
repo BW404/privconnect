@@ -64,7 +64,8 @@ if (isset($_GET['updateprofile'])) {
 
 // for managing add post
 if (isset($_GET['addpost'])) {
-    createPost($_POST,$_FILES);
+    print_r($_POST);
+    // createPost($_POST,$_FILES);
 }
 
 
