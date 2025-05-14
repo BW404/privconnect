@@ -212,7 +212,7 @@ function validateUpdateForm($form_data,$image_data) {
         $response['status'] = false;
         $response['field'] = "email";
     } elseif (!filter_var($form_data['email'], FILTER_VALIDATE_EMAIL)) {
-        $response['msg'] = "Invalid email format.";
+        $response['msg'] = "Invalid email format.";5
         $response['status'] = false;
         $response['field'] = "email";
     }
