@@ -1,13 +1,14 @@
 <?php
 include_once '../php/functions.php';
+// include '../php/header.php';
 
 
-if(!isset($_SESSION['Auth']) && $_SESSION['Auth'] == true) {
-    // User is already logged in, redirect to dashboard
-    header('Location: ../../index.php');
-    exit;
+if (!isset($_SESSION['Auth'])) {
+    header("Location: ../index.php");
+    exit();
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
