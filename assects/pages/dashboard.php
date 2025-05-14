@@ -77,7 +77,7 @@ include '../php/header.php';?>
                     <textarea rows="3" placeholder="What's you mind, Jhon?"></textarea>
                     <div class="add-post-links">
                         <a href="#"><img src="../icons/photo.png" alt="">Phot/Video</a>
-                        <a href="#"><img src="../icons/feeling.png" alt="">Feeling/Activity</a>
+                        <!-- <a href="#"><img src="../icons/feeling.png" alt="">Feeling/Activity</a> -->
                         <button type="button" class="post-btn">Post</button>
                     </div>
                 </div>
