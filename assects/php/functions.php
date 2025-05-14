@@ -201,7 +201,7 @@ function checkUser($form_data) {
 
 // Function to validate update profile form
 
-function validateUpdateForm($form_data,$file_data) {
+function validateUpdateForm($form_data,$image_data) {
     $response = array('status'=> true);
     
     // Validate password
