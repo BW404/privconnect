@@ -231,7 +231,7 @@ function updateProfile($form_data,$image_data) {
         // No new image uploaded, keep the old one
         $form_data['profile_picture'] = getUserProfilePicture($form_data['id']);
     }
-    $query = "UPDATE users SET first_name = '".$form_data['first_name']."', last_name = '".$form_data['last_name']."', email = '".$form_data['email']."', password = '".$form_data['password']."', profile_pic = '".$form_data['profile_picture']."' WHERE id = '".$form_data['username']."'";
+    $query = "UPDATE users SET first_name = '".$form_data['first_name']."', last_name = '".$form_data['last_name']."', email = '".$form_data['email']."', password = '".$form_data['password']."', profile_pic = '".$form_data['profile_picture']."' WHERE username = '".$form_data['username']."'";
     $run = mysqli_query($conn, $query);
     return $run;
 }
