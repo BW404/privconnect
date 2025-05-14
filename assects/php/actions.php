@@ -36,16 +36,12 @@ if (isset($_GET['login'])) {
         header("Location: ../pages/login.php?login");
         exit();
     } else {
-        if (loginUser($_POST)) {
             $_SESSION['Auth'] = true;
             $_SESSION['userdata'] = $response['user'];
             echo "<pre>";
             print_r($_SESSION['userdata']);
             echo "</pre>";
             header("Location: ../pages/dashboard.php");
-            exit();
-        } 
-            header("Location: ../pages/login.php?login");
             exit();
         }
     
