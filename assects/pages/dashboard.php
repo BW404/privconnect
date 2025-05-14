@@ -110,7 +110,7 @@ echo "</pre>";
                 echo '<a href="#"> <i class="fas fa-ellipsis-v"></i></a>';
                 echo '</div>';
 
-                echo '<p class="post-text">'.$post[].' <br><a href="#">#birthday-special</a></p>
+                echo '<p class="post-text">'.$post[].' <br><a href="#">#birthday-special</a></p>';
                 if($post['post_img']) {
                     echo '<img src="../photos/posts/'.$post['post_img'].'" alt="" class="post-img">';
                 }
