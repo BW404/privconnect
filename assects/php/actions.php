@@ -41,7 +41,7 @@ if (isset($_GET['login'])) {
             echo "<pre>";
             print_r($_SESSION['userdata']);
             echo "</pre>";
-            // header("Location: ../pages/dashboard.php");
+            header("Location: ../pages/dashboard.php");
             exit();
         }
     
