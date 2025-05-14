@@ -26,7 +26,7 @@ include '../php/header.php'; ?>
             <form method="POST" action="../php/actions.php?edit_profile" class="edit-profile-form">
                 <div class="form-group">
                     <label for="first_name">First Name</label>
-                    <input type="text" id="first_name" name="first_name" class="form-style" value="<?=user[first_name]?>">
+                    <input type="text" id="first_name" name="first_name" class="form-style" value="1st name">
                 </div>
                 <div class="form-group">
                     <label for="last_name">Last Name</label>
