@@ -145,14 +145,19 @@ function checkUser($form_data) {
         if ($run) {
             mysqli_stmt_bind_param($run, "s", $form_data['username']);
             mysqli_stmt_execute($run);
-            $result = mysqli_stmt_get_result($run);
+            $data = mysqli_stmt_get_result($run);
     
-            if ($data = mysqli_fetch_assoc($result)) {
+            if ($data = mysqli_fetch_assoc($data)) {
                 // Verify the password
                 if (password_verify($form_data['password'], $row['password'])) {
                     mysqli_stmt_close($run);
                     // return true;
-
+                    // Fetch the user data
+                    
+                    $data = mysqli_fetch_assoc($data);
+                    // Check if the user is active
+                    
+                    
                     return $row; // Return the user data
 
                 }
