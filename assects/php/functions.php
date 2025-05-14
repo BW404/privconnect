@@ -254,8 +254,12 @@ function validateUpdateForm($form_data,$file_data) {
 
 // Function to update user profile
 function updateUser($form_data,$file_data) {
-    global $conn;
-    $query = "UPDATE users SET first_name = '".$form_data['first_name']."', last_name = '".$form_data['last_name']."', email = '".$form_data['email']."' WHERE id = '".$_SESSION['userdata']['id']."'";
-    $run = mysqli_query($conn, $query);
-    return $run;
+    echo "<pre>";
+    print_r($form_data);
+    print_r($file_data);
+    echo "</pre>";
+    // global $conn;
+    // $query = "UPDATE users SET first_name = '".$form_data['first_name']."', last_name = '".$form_data['last_name']."', email = '".$form_data['email']."' WHERE id = '".$_SESSION['userdata']['id']."'";
+    // $run = mysqli_query($conn, $query);
+    // return $run;
 }
