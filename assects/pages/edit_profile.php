@@ -30,5 +30,6 @@ include '../php/header.php'; ?>
         </form>
     </div>
     <?php include '../php/footer.php'; ?>
+    <script src="../js/activity.js"></script>
 </body>
 </html>
