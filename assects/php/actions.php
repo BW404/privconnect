@@ -48,7 +48,10 @@ if (isset($_GET['login'])) {
 }
 
 
+<?php
 if (isset($_GET['updateprofile'])) {
+    // Initialize $profile_picture (example: from a file upload)
+    $profile_picture = isset($_FILES['profile_picture']) ? $_FILES['profile_picture'] : null;
 
     $response = validateUpdateForm($_POST, $profile_picture);
     if (is_array($response) && isset($response['status']) && $response['status']) {
@@ -66,7 +69,5 @@ if (isset($_GET['updateprofile'])) {
         header("Location: ../pages/edit_profile.php");
         exit();
     }
-
 }
-
 
