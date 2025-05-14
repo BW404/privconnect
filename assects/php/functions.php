@@ -338,7 +338,7 @@ function createPost($text, $image){
         if (move_uploaded_file($image['tmp_name'], $target_file)) {
             // Update the profile picture in the database
             global $conn;
-            $query = "UPDATE users SET profile_pic = '".$image['post_image']e['name']."' WHERE id = '".$_SESSION['userdata']['id']."'";
+            $query = "UPDATE users SET profile_pic = '".$image['post_image']['name']."' WHERE id = '".$_SESSION['userdata']['id']."'";
             mysqli_query($conn, $query);
         } else {
             echo "Sorry, there was an error uploading your file.";
