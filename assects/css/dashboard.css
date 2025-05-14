@@ -669,6 +669,77 @@ nav{
 
 
 
+.chat-container {
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    background: #2a2a2a;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+}
+
+.chat-header {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    background: #1a1a1a;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.chat-messages .message {
+    margin-bottom: 10px;
+}
+
+.chat-messages .message.sent {
+    text-align: right;
+    color: #dc143c;
+}
+
+.chat-messages .message.received {
+    text-align: left;
+    color: #9a9a9a;
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input textarea {
+    flex: 1;
+    resize: none;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    background: #1a1a1a;
+    color: white;
+}
+
+.chat-input button {
+    background: #dc143c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
 
 
 
