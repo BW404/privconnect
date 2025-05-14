@@ -38,6 +38,8 @@ if(isset($_GET['login'])) {
             exit();
         }
         else{
+            // error for invalid username or password
+            $_SESSION['status'] = false;
             $_SESSION['error'] = "Error logging in.";
             $_SESSION['msg'] = "Invalid username or password.";
             $_SESSION['field'] = "invalid";
