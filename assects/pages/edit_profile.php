@@ -34,7 +34,7 @@ include '../php/header.php'; ?>
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" class="form-style" placeholder="Enter your email" required>
+                    <input type="email" id="email" name="email" class="form-style" value="<?=$user['email']?>">
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
