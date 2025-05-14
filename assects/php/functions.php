@@ -378,3 +378,24 @@ function getPosts() {
     return mysqli_fetch_all($run,true);
 }
 
+
+
+function getAllUsers() {
+    global $conn;
+    $current_user_id = $_SESSION['userdata']['id']; // Get the logged-in user's ID
+
+    $query = "SELECT id, first_name, last_name, profile_pic FROM users WHERE id != ?";
+    $stmt = mysqli_prepare($conn, $query);
+
+    if ($stmt) {
+        mysqli_stmt_bind_param($stmt, "i", $current_user_id);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $users = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        mysqli_stmt_close($stmt);
+        return $users;
+    } else {
+        error_log("MySQL Error: " . mysqli_error($conn));
+        return [];
+    }
+}
