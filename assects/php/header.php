@@ -1,3 +1,14 @@
+<?php
+include_once '../php/functions.php';
+include '../php/header.php';
+
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../index.php");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
