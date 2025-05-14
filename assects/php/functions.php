@@ -159,10 +159,25 @@ function checkUser($form_data) {
                     $data['status'] = true;
 
                     
-                    return $row; // Return the user data
+                    return $data; // Return the user data
 
                 }
+            
+                // Password does not match
+                $response['msg'] = "Invalid password.";
+                $response['status'] = false;
+                $response['field'] = "password";
+                $response['data'] = $form_data;
+                return $response;
+
             }
+            // Username does not exist
+            $response['msg'] = "Username does not exist.";
+            $response['status'] = false;
+            $response['field'] = "username";
+            $response['data'] = $form_data;
+            return $response;
+        
     
             mysqli_stmt_close($run);
         } else {
