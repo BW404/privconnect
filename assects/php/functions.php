@@ -203,6 +203,6 @@ function checkUser($form_data) {
 
 function validateUpdateForm($form_data,$image_data) {
     $response = array('status'=> true);
-    
-    
 
+    
+// f
