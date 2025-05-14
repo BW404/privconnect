@@ -363,6 +363,6 @@ function getPosts() {
     global $conn;
     $query = "SELECT posts.id, posts.post_text, posts.post_img, users.first_name, users.last_name, users.profile_pic FROM posts INNER JOIN users ON posts.user_id = users.id ORDER BY posts.created_at DESC";
     $run = mysqli_query($conn, $query);
-    return $run;
+    return mysqli_fetch_all($run,true);
 }
 
