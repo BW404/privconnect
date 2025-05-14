@@ -328,15 +328,15 @@ function validatePost($form_data,$file_data) {
 // Function to add a post
 function createPost($text, $image) {
     $text = $text['post_text']; 
-    if (!empty($image['name'])) {
+    if (!empty($image['post_image']['name'])) {
         $target_dir = "../photos/posts/";
-        $target_file = $target_dir . basename($image['name']);
+        $target_file = $target_dir . basename($image['post_image']['name']);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
         // Upload the file
-        if (move_uploaded_file($image['tmp_name'], $target_file)) {
+        if (move_uploaded_file($image['post_image']['tmp_name'], $target_file)) {
             global $conn;
-            $query = "INSERT INTO posts (user_id, post_text, post_img) VALUES ('" . $_SESSION['userdata']['id'] . "', '" . $text . "', '" . $image['name'] . "')";
+            $query = "INSERT INTO posts (user_id, post_text, post_img) VALUES ('" . $_SESSION['userdata']['id'] . "', '" . $text . "', '" . $image['post_image']['name'] . "')";
             $run = mysqli_query($conn, $query);
             return $run;
         } else {
@@ -347,7 +347,8 @@ function createPost($text, $image) {
         echo "No image uploaded.";
         return false;
     }
-    
+    }
+
 
     global $conn;
     $query = "INSERT INTO posts (user_id, post_text, post_img) VALUES ('".$_SESSION['userdata']['id']."', '".$text."', '".$image['post_image']['name']."')";
