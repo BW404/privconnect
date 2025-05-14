@@ -370,11 +370,11 @@ if ($run) {
     
 
 
-    global $conn;
-    $query = "INSERT INTO posts (user_id, post_text, post_img) VALUES ('".$_SESSION['userdata']['id']."', '".$text."', '".$image['post_image']['name']."')";
-    $run = mysqli_query($conn, $query);
-    return $run;
-}
+//     global $conn;
+//     $query = "INSERT INTO posts (user_id, post_text, post_img) VALUES ('".$_SESSION['userdata']['id']."', '".$text."', '".$image['post_image']['name']."')";
+//     $run = mysqli_query($conn, $query);
+//     return $run;
+// }
 
 
 
