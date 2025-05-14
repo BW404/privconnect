@@ -155,8 +155,9 @@ function checkUser($form_data) {
                     // Fetch the user data
                     
                     $data = mysqli_fetch_assoc($data);
-                    // Check if the user is active
-                    
+                    // set status to true
+                    $data['status'] = true;
+
                     
                     return $row; // Return the user data
 
