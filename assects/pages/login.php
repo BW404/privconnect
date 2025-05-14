@@ -166,7 +166,6 @@ if (isset($conn)) {
 
     <?php
 unset($_SESSION['error']);
+include('../php/footer.php');
 ?>
 
-</body>
-</html>
